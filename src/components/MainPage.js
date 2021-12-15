@@ -1,3 +1,6 @@
+import Featured from "./Featured";
+import Trending from "./Trending";
+
 const MainPage =()=>{
     return(
         <div className="ui container">
@@ -18,6 +21,8 @@ const MainPage =()=>{
                     </div>
                 </div>
             </div>
+            <Trending/>
+            <Featured/>
         </div>
     )
 }

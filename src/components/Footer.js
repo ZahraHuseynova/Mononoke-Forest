@@ -15,20 +15,23 @@ const Footer =()=>{
                             <div className="column">
                                 <div className="header item"><h1>Get the dirt</h1></div>
                                 <br/>
-                                <i className="thumbs up outline icon" style={{fontSize:'2em'}}></i>
-                                <i className="twitter icon"style={{fontSize:'2em'}}></i>
-                                <i className="linkedin icon"style={{fontSize:'2em'}}></i>
-                                <i className="instagram icon"style={{fontSize:'2em'}}></i>
-                                <i className="pinterest icon"style={{fontSize:'2em'}}></i>
-                                <i className="youtube icon"style={{fontSize:'2em'}}></i>
-                                <i className="tik-tok icon"style={{fontSize:'2em'}}></i>
+                                <div style={{fontSize:'2em'}}>
+                                    <i className="thumbs up outline icon"></i>
+                                    <i className="twitter icon"></i>
+                                    <i className="linkedin icon"></i>
+                                    <i className="instagram icon"></i>
+                                    <i className="pinterest icon"></i>
+                                    <i className="youtube icon"></i>
+                                    <i className="tik-tok icon"></i>
+                                </div>
+                                
                                 <br/>
                                 <br/>
                                 <div>
                                     <p>Copyright 2021 Mononoke forest,Inc.</p>
-                                    <span>Terms of Use</span>
-                                    <span>Privacy Policy</span>
-                                    <span>Accessibility Statement</span>
+                                    <span> Terms of Use&nbsp;</span>
+                                    <span> Privacy Policy &nbsp;</span>
+                                    <span>Accessibility &nbsp; Statement</span>
                                     <p>Do Not Sell My Information</p>
                                 </div>
                             </div>
