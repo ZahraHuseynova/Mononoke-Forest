@@ -1,4 +1,5 @@
 import Featured from "./Featured";
+import Links from "./Links";
 import Trending from "./Trending";
 
 const MainPage =()=>{
@@ -23,6 +24,7 @@ const MainPage =()=>{
             </div>
             <Trending/>
             <Featured/>
+            <Links/>
         </div>
     )
 }
