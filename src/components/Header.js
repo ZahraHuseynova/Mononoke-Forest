@@ -13,7 +13,7 @@ const Header = () =>{
                     </div>
                 </div>
             </div>
-            <div className="ui vertical segment " style={{padding:'25px',backgroundColor:'wheat'}}>
+            <div className="ui vertical segment " style={{padding:'25px'}}>
                 <h1 className="ui header">
                     The Mononoke forest
                 </h1>
