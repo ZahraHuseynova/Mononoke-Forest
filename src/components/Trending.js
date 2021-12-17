@@ -21,7 +21,7 @@ class Trending extends Component{
                     </div>
                     <div className="card">
                         <div className="ui fluid image">
-                        <div className="ui teal ribbon label">
+                            <div className="ui teal ribbon label">
                                 <i className="star icon">50% Off</i>
                             </div>
                             <img src="../assets/trending4.jpg" alt="trendig"/>
