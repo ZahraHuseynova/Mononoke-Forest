@@ -1,0 +1,21 @@
+.subImg {
+  position: relative;
+  text-align: left;
+  color: black;
+}
+
+.text-left {
+  position: absolute;
+  bottom: 215px;
+  left: 16px;
+  font-size: 4em;
+  font-family: "Times New Roman", Times, serif;
+}
+
+.subText {
+  position: absolute;
+  bottom: 150px;
+  left: 16px;
+  font-family: "Times New Roman", Times, serif;
+  font-size: 1.5em;
+}
