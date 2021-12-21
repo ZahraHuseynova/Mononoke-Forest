@@ -83,12 +83,12 @@ class Sub extends Component{
                                 <div className="ui comments">
                                     <div className="comment">
                                         <a className="avatar">
-                                        <img src="../assets/unbox.jpg"/>
+                                        <img src="../assets/pet.jpg" alt="pet"/>
                                         </a>
                                         <div className="content" >
-                                            <h2 className="ui header" style={{fontFamily:'Times New Roman, Times, serif'}}>Unbox Happiness</h2>
+                                            <h2 className="ui header" style={{fontFamily:'Times New Roman, Times, serif'}}>Choose Your Plan</h2>
                                             <p className="text" >
-                                            Every month, a plant and planter will be shipped to your door to enjoy. Rest assured your box will not repeat the same plant within a 6 month period.
+                                            Classic or Pet Friendly. We'll do the work, curating easy-care and non-toxic plants from our local growers--a mix of our top picks and exclusive plants just for subscribers.
                                             </p>
                                         </div>
                                     </div>
@@ -96,12 +96,12 @@ class Sub extends Component{
                                 <div className="ui comments">
                                     <div className="comment">
                                         <a className="avatar">
-                                        <img src="../assets/unbox.jpg"/>
+                                        <img src="../assets/pick.jpg" alt="pick"/>
                                         </a>
                                         <div className="content" >
-                                            <h2 className="ui header" style={{fontFamily:'Times New Roman, Times, serif'}}>Unbox Happiness</h2>
+                                            <h2 className="ui header" style={{fontFamily:'Times New Roman, Times, serif'}}>Pick Your Planter</h2>
                                             <p className="text" >
-                                            Every month, a plant and planter will be shipped to your door to enjoy. Rest assured your box will not repeat the same plant within a 6 month period.
+                                            Cream or Black. Our chic ceramic planters are designed by our team and manufactured by a women-owned pottery company.
                                             </p>
                                         </div>
                                     </div>
@@ -109,12 +109,12 @@ class Sub extends Component{
                                 <div className="ui comments">
                                     <div className="comment">
                                         <a className="avatar">
-                                        <img src="../assets/unbox.jpg"/>
+                                        <img src="../assets/learn.jpg"/>
                                         </a>
                                         <div className="content" >
-                                            <h2 className="ui header" style={{fontFamily:'Times New Roman, Times, serif'}}>Unbox Happiness</h2>
+                                            <h2 className="ui header" style={{fontFamily:'Times New Roman, Times, serif'}}>Learn About Plants</h2>
                                             <p className="text" >
-                                            Every month, a plant and planter will be shipped to your door to enjoy. Rest assured your box will not repeat the same plant within a 6 month period.
+                                            Learn about your new plant by visiting our digital Care Library, or check your email inbox for a monthly video on your plant of the month from our in-house expert.
                                             </p>
                                         </div>
                                     </div>
@@ -122,12 +122,12 @@ class Sub extends Component{
                                 <div className="ui comments">
                                     <div className="comment">
                                         <a className="avatar">
-                                        <img src="../assets/unbox.jpg"/>
+                                        <img src="../assets/unbox.jpg"  alt="sups"/>
                                         </a>
                                         <div className="content" >
-                                            <h2 className="ui header" style={{fontFamily:'Times New Roman, Times, serif'}}>Unbox Happiness</h2>
+                                            <h2 className="ui header" style={{fontFamily:'Times New Roman, Times, serif'}}>Enjoy Monthly,Guaranteed</h2>
                                             <p className="text" >
-                                            Every month, a plant and planter will be shipped to your door to enjoy. Rest assured your box will not repeat the same plant within a 6 month period.
+                                            Our subscription sets you up for plant parenthood success. We guarantee our plants arrive in happy, healthy condition, or we replace them for free.
                                             </p>
                                         </div>
                                     </div>
@@ -135,12 +135,12 @@ class Sub extends Component{
                                 <div className="ui comments">
                                     <div className="comment">
                                         <a className="avatar">
-                                        <img src="../assets/unbox.jpg"/>
+                                        <img src="../assets/gift.jpg" alt="gift"/>
                                         </a>
                                         <div className="content" >
-                                            <h2 className="ui header" style={{fontFamily:'Times New Roman, Times, serif'}}>Unbox Happiness</h2>
+                                            <h2 className="ui header" style={{fontFamily:'Times New Roman, Times, serif'}}>Gift a Subscription</h2>
                                             <p className="text" >
-                                            Every month, a plant and planter will be shipped to your door to enjoy. Rest assured your box will not repeat the same plant within a 6 month period.
+                                            Master the art of gift giving with a plant subscription box. We offer digital subscription gift cards that cover the cost of 3-month and 6-month subscription plans.
                                             </p>
                                         </div>
                                     </div>
