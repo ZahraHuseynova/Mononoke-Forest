@@ -1,6 +1,7 @@
 const Footer =()=>{
     return(
         <div className="ui vertical segment">
+            <hr/>
             <div className="ui container">
                 <div className="ui center aligned grid">
                         <div className="center aligned three column row">

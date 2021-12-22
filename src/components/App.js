@@ -7,6 +7,9 @@ import SalePage from './SalePage';
 import SubPage from './SubPage';
 import StoreLoc from './StoreLoc';
 import GiftCard from './GiftCard';
+import Shipping from './Shipping';
+import Contact from './Contact';
+import AboutUs from './AboutUs';
 
 
 const App=()=>{
@@ -20,6 +23,9 @@ const App=()=>{
                 <Route path="/subscription" component={SubPage} exact/>
                 <Route path="/stores" component={StoreLoc} exact/>
                 <Route path="/gift" component={GiftCard} exact/>
+                <Route path="/shipping" component={Shipping} exact/>
+                <Route path="/contact" component={Contact} exact/>
+                <Route path="/about" component={AboutUs} exact/>
             <Footer/>
             </BrowserRouter>
         </div>
