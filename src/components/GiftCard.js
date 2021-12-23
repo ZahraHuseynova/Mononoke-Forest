@@ -53,7 +53,6 @@ const GiftCard =()=>{
                         </div>
                     </div>
                 </div>
-                <hr/>
             </div>
         </div>
     )

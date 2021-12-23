@@ -1,4 +1,4 @@
-import MainPage from "./MainPage";
+import { Link } from "react-router-dom";
 
 const Header = () =>{
     return (
@@ -9,21 +9,21 @@ const Header = () =>{
                     <span style={{color:'white',paddingLeft:'25px'}}>Order by 12/15 for guaranteed delivery by 12/25</span>
                     </div>
                     <div className="item"> 
-                    <button className="ui button" style={{color:'#00ab84'}}> Shop now</button>
+                    <Link to="/plants" className="ui button" style={{color:'#00ab84'}}> Shop now</Link>
                     </div>
                 </div>
             </div>
             <div className="ui vertical segment " style={{padding:'25px'}}>
                 <h1 className="ui header">
-                    The Mononoke forest
+                    <Link to="/">The Mononoke forest</Link>
                 </h1>
                 <hr/>
                 <div className="ui secondary menu">
-                    <a className="item"> Plants</a>
-                    <a className="item"> Sale</a>
-                    <a className="item"> Subscription</a>
-                    <a className="item"> Store Locations</a>
-                    <a className="item"> Gift Cards</a>
+                    <Link to="/plants" className="item"> Plants</Link>
+                    <Link to="/sale" className="item"> Sale</Link>
+                    <Link to="/subscription" className="item"> Subscription</Link>
+                    <Link to="/stores" className="item"> Store Locations</Link>
+                    <Link to="/gift" className="item"> Gift Cards</Link>
                     <div className="right menu">
                         <div className="ui item">
                             <i className="search link icon"></i>

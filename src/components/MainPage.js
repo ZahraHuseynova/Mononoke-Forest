@@ -1,6 +1,7 @@
 import Featured from "./Featured";
 import Links from "./Links";
 import Trending from "./Trending";
+import { Link } from "react-router-dom";
 
 const MainPage =()=>{
     return(
@@ -14,7 +15,7 @@ const MainPage =()=>{
                                 <h1 style={{fontSize:'4em'}}>Everyone loves a green gift</h1>
                             </div>
                             <h4>Plants,bouqeuts,and biophilic decor of all stripes and sizes delivered to their doorstep.</h4>
-                            <button className="ui button" style={{backgroundColor:'#00ab84',color:'white'}}> Shop now</button>
+                            <Link to="/plants" className="ui button" style={{backgroundColor:'#00ab84',color:'white'}}> Shop now</Link>
                         </div>
                         <div className="column">
                             <img src="../assets/forest.jpg" alt="forest"/>

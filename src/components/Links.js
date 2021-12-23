@@ -22,7 +22,6 @@ const Links =()=>{
                     </div>
                 </div>
             </div>
-            <hr/>
         </div>
     )
 }

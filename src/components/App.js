@@ -10,6 +10,7 @@ import GiftCard from './GiftCard';
 import Shipping from './Shipping';
 import Contact from './Contact';
 import AboutUs from './AboutUs';
+import ShowPage from './ShowPage';
 
 
 const App=()=>{
@@ -26,6 +27,7 @@ const App=()=>{
                 <Route path="/shipping" component={Shipping} exact/>
                 <Route path="/contact" component={Contact} exact/>
                 <Route path="/about" component={AboutUs} exact/>
+                <Route path="/showpage" component={ShowPage} exact/>
             <Footer/>
             </BrowserRouter>
         </div>
