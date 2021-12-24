@@ -38,7 +38,6 @@ const Stores =()=>{
                         </div>
                     </div>
                 </div>
-                <hr/>
             </div>
         </div>
     )

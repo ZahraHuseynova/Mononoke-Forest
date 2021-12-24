@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 const Footer =()=>{
     return(
         <div className="ui vertical segment">
@@ -7,23 +9,21 @@ const Footer =()=>{
                         <div className="center aligned three column row">
                             <div className="column">
                                 <div className="ui vertical text menu">
-                                    <div className="active item">FAQ</div>
-                                    <div className="item">Shipping nfo</div>
-                                    <div className="item">Contact Us</div>
-                                    <div className="item">About Us</div>
+                                    <Link to="/shipping"className="active item">Shipping info</Link>
+                                    <Link to="/contact" className="item">Contact Us</Link>
+                                    <Link to="/about" className="item">About Us</Link>
                                 </div>
                             </div>
                             <div className="column">
                                 <div className="header item"><h1>Get the dirt</h1></div>
                                 <br/>
                                 <div style={{fontSize:'2em'}}>
-                                    <i className="thumbs up outline icon"></i>
-                                    <i className="twitter icon"></i>
-                                    <i className="linkedin icon"></i>
-                                    <i className="instagram icon"></i>
-                                    <i className="pinterest icon"></i>
-                                    <i className="youtube icon"></i>
-                                    <i className="tik-tok icon"></i>
+                                    <a href="https://www.facebook.com/"><i className="thumbs up outline icon"></i></a>
+                                    <a href="https://www.twitter.com/"><i className="twitter icon"></i></a>
+                                    <a href="https://www.linkedin.com/"><i className="linkedin icon"></i></a>
+                                    <a href="https://www.instagram.com/"><i className="instagram icon"></i></a>
+                                    <a href="https://www.pinterest.com/"><i className="pinterest icon"></i></a>
+                                    <a href="https://www.youtube.com/"><i className="youtube icon"></i></a>
                                 </div>
                                 
                                 <br/>
@@ -38,10 +38,9 @@ const Footer =()=>{
                             </div>
                             <div className="column">
                             <div className="ui vertical text menu">
-                                    <div className="active item">Our Stores</div>
-                                    <div className="item">Gift Cards</div>
-                                    <div className="item">Workshops</div>
-                                    <div className="item">Plant Care Lbrary</div>
+                                    <Link to="/stores" className="active item">Our Stores</Link>
+                                    <Link to="/gift" className="item">Gift Cards</Link>
+                                    <Link to='/stores' className="item">Workshops</Link>
                                 </div>
                             </div>
                         </div>

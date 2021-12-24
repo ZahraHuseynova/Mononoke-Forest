@@ -69,7 +69,7 @@ class Sub extends Component{
                             <div className="column" >
                                 <div className="ui comments">
                                     <div className="comment">
-                                        <a className="avatar">
+                                        <a href='' className="avatar">
                                         <img src="../assets/unbox.jpg"/>
                                         </a>
                                         <div className="content" >
@@ -82,7 +82,7 @@ class Sub extends Component{
                                 </div>
                                 <div className="ui comments">
                                     <div className="comment">
-                                        <a className="avatar">
+                                        <a href='' className="avatar">
                                         <img src="../assets/pet.jpg" alt="pet"/>
                                         </a>
                                         <div className="content" >
@@ -95,7 +95,7 @@ class Sub extends Component{
                                 </div>
                                 <div className="ui comments">
                                     <div className="comment">
-                                        <a className="avatar">
+                                        <a href='' className="avatar">
                                         <img src="../assets/pick.jpg" alt="pick"/>
                                         </a>
                                         <div className="content" >
@@ -108,7 +108,7 @@ class Sub extends Component{
                                 </div>
                                 <div className="ui comments">
                                     <div className="comment">
-                                        <a className="avatar">
+                                        <a href='' className="avatar">
                                         <img src="../assets/learn.jpg"/>
                                         </a>
                                         <div className="content" >
@@ -121,7 +121,7 @@ class Sub extends Component{
                                 </div>
                                 <div className="ui comments">
                                     <div className="comment">
-                                        <a className="avatar">
+                                        <a href='' className="avatar">
                                         <img src="../assets/unbox.jpg"  alt="sups"/>
                                         </a>
                                         <div className="content" >
@@ -134,7 +134,7 @@ class Sub extends Component{
                                 </div>
                                 <div className="ui comments">
                                     <div className="comment">
-                                        <a className="avatar">
+                                        <a href='' className="avatar">
                                         <img src="../assets/gift.jpg" alt="gift"/>
                                         </a>
                                         <div className="content" >

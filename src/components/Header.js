@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import GoogleAuth from "../GoogleAuth";
 
 const Header = () =>{
     return (
@@ -29,11 +30,11 @@ const Header = () =>{
                             <i className="search link icon"></i>
                             Search
                         </div>
-                        <a className="ui item"> Log in</a>
                         <div className="ui item">
                             <i className="cart icon"></i>
                             Cart (0)
                         </div>
+                        <div className="ui item"> <GoogleAuth/></div>
                     </div>
                 </div>
                 
