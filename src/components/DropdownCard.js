@@ -14,9 +14,9 @@ let Dropdown = (props)=>{
                     component="select"
                 >
                     <option value="">Select option</option>
-                    <option value="change">I need to change my order</option>
-                    <option value="status">What's my order status</option>
-                    <option value="subscription">I need help with my subscription</option>
+                    <option value="25">$25</option>
+                    <option value="35">$35</option>
+                    <option value="50">$50</option>
                 </Field>
             </div>
             <div>

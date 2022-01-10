@@ -1,2 +1,11 @@
 export const SIGN_IN = 'SIGN_IN';
 export const SIGN_OUT= 'SIGN_OUT';
+export const FETCH_PLANTS='FETCH_PLANTS';
+export const FETCH_PLANT ='FETCH_PLANT';
+export const EDIT_PLANT='EDIT_PLANT';
+export const DELETE_PLANT='DELETE_PLANT';
+export const CREATE_FEEDBACK='CREATE_FEEDBACK';
+export const DELETE_FEEDBACK='DELETE_FEEDBACK';
+export const EDIT_FEEDBACK='EDIT_FEEDBACK';
+export const FETCH_FEEDBACK='FETCH_FEEDBACK';
+export const FETCH_FEEDBACKS='FETCH_FEEDBACKS';

@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import GoogleAuth from "../GoogleAuth";
+import GoogleAuth from "./GoogleAuth";
 
 const Header = () =>{
     return (

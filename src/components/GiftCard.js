@@ -1,31 +1,8 @@
-import { useState } from "react";
-import Dropdown from "./Dropdown";
+import { reduxForm } from 'redux-form';
+import DropdownCard from "./DropdownCard";
 
-const options =[
-    {
-        label:'Select amount',
-        value:" "
-    },
-    {
-        label:'$25',
-        value:"25"
-    },
-    {
-        label:'$50',
-        value:'50'
-    },{
-        label:'$75',
-        value:'75'
-    },{
-        label:'$150',
-        value:'150'
-    },{
-        label:'$200',
-        value:'200'
-    },
-]
+
 const GiftCard =()=>{
-    const[selected,setSelected] = useState(options[0]);
     return (
         <div className="ui container">
             <div className="ui vertical segment" >
@@ -37,10 +14,7 @@ const GiftCard =()=>{
                         <div className="column">
                             <h1 style={{fontSize:'5em',fontFamily:'Times New Roman, Times, serif'}}>Gift Card</h1>   
                             <h3 style={{fontSize:'3em',fontFamily:'Times New Roman, Times, serif'}}>$25</h3>
-                            <Dropdown
-                            options={options}
-                            selected={selected}
-                            onSelectChange={setSelected}
+                            <DropdownCard 
                             />            
                             <div className="ui divided items">
                                 <div class="item">
@@ -62,4 +36,6 @@ const GiftCard =()=>{
     )
 }
 
-export default GiftCard;
+export default reduxForm ({
+    form:'giftcard'
+})(GiftCard);

@@ -43,12 +43,6 @@ const Plants =()=>{
             <div className="ui container">
                 <div className="ui vertical segment">
                     <div className="ui header" style={{color:'#00ab84', fontSize:'4em',padding:'25px'}}>Plants</div>
-                    <Dropdown
-                        label="size"
-                        options={options}
-                        selected={selected}
-                        onSelectChange={setSelected}
-                    />
                     <div className="ui three stackable cards">
                     <div className="card">
                         <div className=" ui fluid image">
