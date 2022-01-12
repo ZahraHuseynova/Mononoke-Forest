@@ -2,7 +2,7 @@ import { connect } from "react-redux";
 import { Field,reduxForm, formValueSelector} from "redux-form";
 
 
-let Dropdown = (props)=>{
+let DropdownCard = (props)=>{
     
     const { handleSubmit,pristine,submitting,reset} = props;
 
@@ -10,7 +10,7 @@ let Dropdown = (props)=>{
         <form onSubmit={handleSubmit}>
             <div>
                 <Field
-                    name="feedback"
+                    name="amount"
                     component="select"
                 >
                     <option value="">Select option</option>
@@ -27,17 +27,17 @@ let Dropdown = (props)=>{
 
 }
 
-Dropdown = reduxForm({
-    form:'reduxDropdown'
-})(Dropdown)
+DropdownCard = reduxForm({
+    form:'reduxDropdownCard'
+})(DropdownCard)
 
-    const selector = formValueSelector ('reduxDropdown');
-    Dropdown = connect (
+    const selector = formValueSelector ('reduxDropdownCard');
+    DropdownCard = connect (
         state=>{
-            const feedbackValue = selector (state,'feedback')
+            const feedbackValue = selector (state,'amount')
             return{feedbackValue}
         }
-    )(Dropdown)
+    )(DropdownCard)
 
 
-export default Dropdown;
+export default DropdownCard;
