@@ -1,5 +1,7 @@
 import { Component } from 'react'
-import { Field, reduxForm } from 'redux-form';
+import { Field, reduxForm, reset } from 'redux-form';
+import { connect } from 'react-redux';
+import { createContact} from '../actions/index';
 
 
 class ContactInfo extends Component{
@@ -36,8 +38,9 @@ class ContactInfo extends Component{
     }
     
 
-    onSubmit(formValue){
-        console.log(formValue)
+    onSubmit = (formValues,dispatch) => {
+        dispatch(reset("contact")); 
+        this.props.createContact(formValues)
     }
 
     
@@ -60,7 +63,6 @@ class ContactInfo extends Component{
                         <div className="two fields" >
                             <div className='field'>
                             <label>*Reason for contact</label>
-                            {/* <Dropdown value={this.props.value}/>  */}
                             <div>
                                 <Field
                                     name="contactReason"
@@ -109,9 +111,11 @@ const validate = (formValue)=>{
 }
 
 
-export default reduxForm ({
-    form:"feedback",
+
+const formWrapped = reduxForm ({
+    form:"contact",
     validate,
 })(ContactInfo);
 
 
+export default connect(null,{ createContact})(formWrapped)
