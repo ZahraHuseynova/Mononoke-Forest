@@ -11,6 +11,7 @@ import Shipping from './Shipping';
 import Contact from './Contact';
 import AboutUs from './AboutUs';
 import ShowPage from './ShowPage';
+import adminPage from './Admin/adminPage';
 
 
 const App=()=>{
@@ -28,6 +29,7 @@ const App=()=>{
                 <Route path="/contact" component={Contact} exact/>
                 <Route path="/about" component={AboutUs} exact/>
                 <Route path="/showpage" component={ShowPage} exact/>
+                <Route path="/contactadmin" component={adminPage}/>
             <Footer/>
             </BrowserRouter>
         </div>

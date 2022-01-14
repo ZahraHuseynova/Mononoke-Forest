@@ -2,6 +2,7 @@ import { Component } from 'react'
 import { Field, reduxForm, reset } from 'redux-form';
 import { connect } from 'react-redux';
 import { createContact} from '../actions/index';
+import {Link } from 'react-router-dom';
 
 
 class ContactInfo extends Component{
@@ -41,6 +42,15 @@ class ContactInfo extends Component{
     onSubmit = (formValues,dispatch) => {
         dispatch(reset("contact")); 
         this.props.createContact(formValues)
+    }
+
+    renderAdmin(){
+        return(
+            <div>
+                <Link to="/contactadmin" className="ui button primary">List of Contacts</Link>
+            </div>
+        )
+        
     }
 
     
@@ -84,8 +94,9 @@ class ContactInfo extends Component{
                         <br/>
                         <br/>
                         <button className="fluid ui positive button">Send</button>
+                        <br/>
                     </form>
-                    
+                    {this.renderAdmin()}
                 </div>)
                 
         }

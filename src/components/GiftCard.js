@@ -1,12 +1,24 @@
 import { Component } from 'react';
 import { reduxForm,Field ,reset } from 'redux-form';
+import { connect } from 'react-redux';
+import { createCard } from '../actions/index';
+import { Link } from 'react-router-dom';
 
 
 class GiftCard extends Component{
 
-    onSubmit(formValue, dispatch){
+    onSubmit=(formValues, dispatch)=>{
         dispatch(reset('giftcard'))
-        console.log(formValue)
+        this.props.createCard(formValues)
+    }
+
+    renderAdmin(){
+        return(
+            <div>
+                <Link to="/contactadmin" className="ui button primary">List of Contacts</Link>
+            </div>
+        )
+        
     }
 
     render(){
@@ -29,9 +41,9 @@ class GiftCard extends Component{
                                                 component="select"
                                             >
                                                 <option value="">Select option</option>
-                                                <option value="25">$25</option>
-                                                <option value="50">$50</option>
-                                                <option value="100">$100</option>
+                                                <option value="$25">$25</option>
+                                                <option value="$50">$50</option>
+                                                <option value="$100">$100</option>
                                             </Field>
                                             <div className="ui divided items">
                                                 <div className="item">
@@ -47,6 +59,8 @@ class GiftCard extends Component{
                                         </div>
                                         
                                     </form>
+                                    <br/>
+                                    {this.renderAdmin()}
                                 </div>              
                             </div>
                                 
@@ -59,6 +73,9 @@ class GiftCard extends Component{
     
 }
 
-export default reduxForm ({
+
+const formWrapped = reduxForm ({
     form:'giftcard'
 })(GiftCard);
+
+export default connect(null,{createCard})(formWrapped);

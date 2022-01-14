@@ -9,9 +9,22 @@
       "order": "15",
       "comment": "vvv",
       "id": 1
+    },
+    {
+      "card": "50",
+      "id": 2
     }
   ],
-  "giftcard": [],
+  "giftcard": [
+    {
+      "card": "25",
+      "id": 1
+    },
+    {
+      "card": "$50",
+      "id": 2
+    }
+  ],
   "plants": [
     {
       "id": 0,

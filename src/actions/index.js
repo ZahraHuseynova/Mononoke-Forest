@@ -17,5 +17,50 @@ export const signOut =()=>{
 }
 
 export const createContact = (formValue) => async (dispatch)=>{
-    contact.post('/contact',formValue);
+    const {data} = await contact.post('/contact',formValue);
+
+    dispatch ({ type: CREATE_CONTACT,payload: data});
 };
+
+export const fetchContacts = ( ) => async (dispatch)=>{
+    const {data} = await contact.get('/contact');
+
+    dispatch ({ type: FETCH_CONTACTS ,payload: data})
+}
+
+export const fetchContact = (id)=> async (dispatch)=>{
+    const {data} =await contact.get(`/contact/${id}`)
+
+    dispatch ({ type: FETCH_CONTACT,payload:data});
+}
+
+export const deleteContact =(id)=> async (dispatch)=>{
+    const { data } = await contact.delete(`/contct/${id}`)
+
+    dispatch ({type:DELETE_CONTACT,payload:data});
+}
+
+export const createCard = (formValue) => async (dispatch)=>{
+    const { data } = await contact.post ('/giftcard',formValue)
+
+    dispatch ({type:CREATE_CARD , payload:data});
+}
+
+export const fetchCards = () => async  (dispatch)=>{
+    const { data } = await contact.get('/giftcard')
+
+    dispatch ({ type:FETCH_CARDS, payload:data });
+}
+
+export const fetchCard = (id)=> async (dispatch)=>{
+    const { data } = await contact.get(`/giftcard/${id}`)
+
+    dispatch ({ type: FETCH_CARD, payload:data});
+}
+
+export const deleteCard = (id)=> async (dispatch)=>{
+    const { data } = await contact.delete(`/giftcard/${id}`)
+
+    dispatch ({type: DELETE_CARD, payload:data})
+}
+
