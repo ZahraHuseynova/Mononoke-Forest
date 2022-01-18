@@ -16,8 +16,9 @@ export const signOut =()=>{
     }
 }
 
-export const createContact = (formValue) => async (dispatch)=>{
-    const {data} = await contact.post('/contact',formValue);
+export const createContact = (formValue) => async (dispatch, getState)=>{
+    const { userId} = getState().auth;
+    const {data} = await contact.post('/contact',{...formValue, userId});
 
     dispatch ({ type: CREATE_CONTACT,payload: data});
 };
@@ -40,8 +41,9 @@ export const deleteContact =(id)=> async (dispatch)=>{
     dispatch ({type:DELETE_CONTACT,payload:data});
 }
 
-export const createCard = (formValue) => async (dispatch)=>{
-    const { data } = await contact.post ('/giftcard',formValue)
+export const createCard = (formValue) => async (dispatch,getState)=>{
+    const { userId} = getState().auth;
+    const { data } = await contact.post ('/giftcard',{...formValue,userId})
 
     dispatch ({type:CREATE_CARD , payload:data});
 }

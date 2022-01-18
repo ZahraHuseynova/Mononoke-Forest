@@ -13,12 +13,32 @@ class GiftCard extends Component{
     }
 
     renderAdmin(){
-        return(
-            <div>
-                <Link to="/contactadmin" className="ui button primary">List of Contacts</Link>
-            </div>
-        )
+        if(this.props.isAdminIn === "109232611272471206484"){
+            return(
+                <div>
+                    <Link to="/contactadmin" className="ui button primary">List of Cards</Link>
+                </div>
+            )
+        } 
+        else {
+            return null;
+        }
         
+        
+    }
+
+    renderButton(){
+        if(this.props.isSignedIn) {
+            return (
+                <div>
+                    <button className="ui fluid teal button">Gift</button>
+                </div>
+            )
+        }
+
+        else {
+            return null;
+        }
     }
 
     render(){
@@ -54,7 +74,7 @@ class GiftCard extends Component{
                                                         Give the gift of their choosing with a Digital Gift Card. You determine how the new plant parent receives their gift: delivered directly to their email inbox, a link for you to share with them or as a print out. All methods include instructions on how to redeem. No additional processing or shipping fees
                                                     </div>
                                                 </div>
-                                            <button className="ui fluid teal button">Gift</button>
+                                                {this.renderButton()}
                                             </div>
                                         </div>
                                         
@@ -78,4 +98,11 @@ const formWrapped = reduxForm ({
     form:'giftcard'
 })(GiftCard);
 
-export default connect(null,{createCard})(formWrapped);
+const mapStateToProps =(state)=>{
+    return{
+        isAdminIn:state.auth.userId,
+        isSignedIn:state.auth.isSignedIn
+    }
+}
+
+export default connect(mapStateToProps,{createCard})(formWrapped);

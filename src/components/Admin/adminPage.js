@@ -8,10 +8,27 @@ class ContactAdmin extends Component{
         this.props.fetchContacts();
     }
 
+    renderRecords(){
+        return(
+            <div className="right floated content">
+                <button className="ui button negative">Delete</button>
+            </div>
+        )
+    }
+
+    // renderCard(){
+    //     return(
+    //         <div>
+    //             <button className="ui button negative">Delete</button>
+    //         </div>
+    //     )
+    // }
+
     renderContactList(){
         return this.props.contact.map(contact=>{
             return (
                 <div className="item" key={contact.id}>
+                    {this.renderRecords()}
                     <i className="large middle aligned icon chat"/>
                     <div className="content">
                         {contact.name}&nbsp;
@@ -29,7 +46,7 @@ class ContactAdmin extends Component{
                     <div className="description">
                         {contact.comment}
                     </div>
-
+                    
                 </div>
             )
         })
@@ -43,7 +60,7 @@ class ContactAdmin extends Component{
                     <div className="content">
                         {card.card}
                     </div>
-
+                    {this.renderRecords()}
                 </div>
             )
         })

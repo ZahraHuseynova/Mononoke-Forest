@@ -45,14 +45,19 @@ class ContactInfo extends Component{
     }
 
     renderAdmin(){
-        return(
-            <div>
-                <Link to="/contactadmin" className="ui button primary">List of Contacts</Link>
-            </div>
-        )
+        if(this.props.isAdminIn === '109232611272471206484'){
+            return(
+                <div>
+                    <Link to="/contactadmin" className="ui button primary">List of Contacts</Link>
+                </div>
+            )
+        } else {
+            return null;
+        }
+        
         
     }
-
+ 
     
     
     render(){
@@ -128,5 +133,11 @@ const formWrapped = reduxForm ({
     validate,
 })(ContactInfo);
 
+const mapStateToProps =(state) =>{
+    return{
+        isAdminIn:state.auth.userId,
+    }
+}
 
-export default connect(null,{ createContact})(formWrapped)
+
+export default connect(mapStateToProps,{ createContact})(formWrapped)
