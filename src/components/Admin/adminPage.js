@@ -1,5 +1,6 @@
 import { Component } from "react";
 import { connect } from 'react-redux';
+import { Link } from "react-router-dom";
 import { fetchCards, fetchContacts} from '../../actions'
 
 class ContactAdmin extends Component{
@@ -8,12 +9,17 @@ class ContactAdmin extends Component{
         this.props.fetchContacts();
     }
 
-    renderRecords(){
-        return(
-            <div className="right floated content">
-                <button className="ui button negative">Delete</button>
-            </div>
-        )
+    renderRecords(contacts){
+        if(this.props.currentUserId){
+            return(
+                <div className="right floated content">
+                    <Link to={`/deletepage/${contacts.id}`} className="ui button green">Done</Link>
+                </div>
+            ) 
+        } else {
+            return null;
+        }
+        
     }
 
     // renderCard(){
@@ -25,26 +31,26 @@ class ContactAdmin extends Component{
     // }
 
     renderContactList(){
-        return this.props.contact.map(contact=>{
+        return this.props.contact.map((contacts)=>{
             return (
-                <div className="item" key={contact.id}>
-                    {this.renderRecords()}
+                <div className="item" key={contacts.id}>
+                    {this.renderRecords(contacts)}
                     <i className="large middle aligned icon chat"/>
                     <div className="content">
-                        {contact.name}&nbsp;
-                        {contact.surname}
+                        {contacts.name}&nbsp;
+                        {contacts.surname}
                     </div>
                     <div className="description">
-                        {contact.email} 
+                        {contacts.email} 
                     </div>
                     <div className="description">
-                        {contact.phone}
+                        {contacts.phone}
                     </div>
                     <div className="description">
-                        {contact.order}
+                        {contacts.order}
                     </div>
                     <div className="description">
-                        {contact.comment}
+                        {contacts.comment}
                     </div>
                     
                 </div>
@@ -53,14 +59,14 @@ class ContactAdmin extends Component{
     }
 
     renderCardList(){
-        return this.props.card.map(card=>{
+        return this.props.card.map(cards=>{
             return (
-                <div className="item" key={card.id}>
+                <div className="item" key={cards.id}>
                     <i className="large middle aligned icon gift"/>
                     <div className="content">
-                        {card.card}
+                        {cards.card}
                     </div>
-                    {this.renderRecords()}
+                    {this.renderRecords(cards)}
                 </div>
             )
         })
@@ -81,7 +87,8 @@ class ContactAdmin extends Component{
 const mapStateToProps = (state)=>{
     return {
         contact: Object.values(state.contact),
-        card: Object.values(state.card)
+        card: Object.values(state.card),
+        currentUserId:state.auth.userId
     }
 }
 

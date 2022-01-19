@@ -2,6 +2,8 @@ import { SIGN_IN,SIGN_OUT,FETCH_CARD,FETCH_CARDS,FETCH_CONTACT,FETCH_CONTACTS,FE
     CREATE_CARD,CREATE_CONTACT,EDIT_CARD,EDIT_PLANT,EDIT_CONTACT,DELETE_CARD,DELETE_PLANT,DELETE_CONTACT } from "./types"
 
 import contact from "../apis/contact"
+import history from "../history"
+
 
 export const signIn =(userId)=>{
     return {
