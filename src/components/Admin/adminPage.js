@@ -14,11 +14,13 @@ class ContactAdmin extends Component{
             return(
                 <div className="right floated content">
                     <Link to={`/deletepage/${contacts.id}`} className="ui button green">Done</Link>
+                    
                 </div>
             ) 
         } else {
             return null;
         }
+       
         
     }
 
@@ -71,6 +73,13 @@ class ContactAdmin extends Component{
             )
         })
     }
+
+    renderButtonToDelete(){
+        return(
+            <Link to="/deletepage" className="ui button primary"> Go to Delete Page</Link>
+        )
+    }
+
     render(){
         return (
             <div className="ui container"> 
@@ -78,6 +87,7 @@ class ContactAdmin extends Component{
                 <div className="ui celled list">{this.renderContactList()}</div>
                 <h2>Card orders</h2>
                 <div className="ui celled list">{this.renderCardList()}</div>
+                {this.renderButtonToDelete()}
             </div>
         )
     }

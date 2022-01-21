@@ -1,7 +1,7 @@
 import { connect } from "react-redux";
 import { Component } from "react";
-import { fetchContact} from '../../actions'
-import { fetchCard } from '../../actions';
+import { fetchContact, fetchCard, deleteCard,deleteContact} from '../../actions'
+import { Link } from 'react-router-dom';
 
 class DeletePage extends Component{
     componentDidMount(){
@@ -12,17 +12,16 @@ class DeletePage extends Component{
     renderContactDelete(){
         if(this.props.contact){
             return(<div>
-                <div className="content">{this.props.contact.name}</div>
+                <div className="content">{this.props.contact.name}{this.props.contact.surname}</div>
+                <div className="content">{this.props.contact.email}</div>
+                <div className="content">{this.props.contact.phone}</div>
+                <div className="content">{this.props.contact.order}</div>
                 <div className="right floated content">
-                <button className="ui button negative">Delete</button>
-            </div>
+                <button onClick = {()=>{this.props.deleteContact(this.props.match.params.id)}}className="ui button negative">Delete</button>
+                </div>
             </div>)
         }
-        return(
-            <div>
-                Loading ...
-            </div>
-        )
+        return null;
     }
 
     renderCardDelete(){
@@ -30,23 +29,30 @@ class DeletePage extends Component{
             return(<div>
                 <div className="content">{this.props.card.card}</div>
                 <div className="right floated content">
-                <button className="ui button negative">Delete</button>
+                <button  onClick = {()=>{this.props.deleteCard(this.props.match.params.id)}}className="ui button negative">Delete</button>
             </div>
             </div>)
         }
+        return null;
+    }
+
+    renderButtonToAdmin(){
         return(
-            <div>
-                Loading ...
-            </div>
+            <Link to="/adminpage" className="ui button primary"> Go to Admin Page</Link>
         )
     }
+
     render(){
         return (
-            <div className="ui container"> 
+            <div className="ui container">
+                <div className="ui segment">
                 <h2>Contacts</h2>
-                <div className="ui celled list">{this.renderContactDelete()}</div>
+                <div className="ui celled list">{this.renderContactDelete()} </div>
                 <h2>Cards</h2>
                 <div className="ui celled list">{this.renderCardDelete()}</div>
+                </div> 
+                
+                <div className="ui segment">{this.renderButtonToAdmin()}</div>
             </div>
         )
     }
@@ -60,4 +66,4 @@ const mapStateToProps = (state,ownProps)=>{
     }
 }
 
-export default connect(mapStateToProps,{fetchContact,fetchCard})(DeletePage);
+export default connect(mapStateToProps,{deleteCard, deleteContact,fetchContact,fetchCard})(DeletePage);

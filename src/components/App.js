@@ -31,7 +31,7 @@ const App=()=>{
                 <Route path="/contact" component={Contact} exact/>
                 <Route path="/about" component={AboutUs} exact/>
                 <Route path="/showpage" component={ShowPage} exact/>
-                <Route path="/contactadmin" component={adminPage}/>
+                <Route path="/contactadmin/" component={adminPage}/>
                 <Route path="/deletepage/:id" component={DeletePage}/>
             <Footer/>
             </Router>

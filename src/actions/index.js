@@ -38,9 +38,10 @@ export const fetchContact = (id)=> async (dispatch)=>{
 }
 
 export const deleteContact =(id)=> async (dispatch)=>{
-    const { data } = await contact.delete(`/contct/${id}`)
+    const { data } = await contact.delete(`/contact/${id}`)
 
     dispatch ({type:DELETE_CONTACT,payload:data});
+    history.push('/deletepage')
 }
 
 export const createCard = (formValue) => async (dispatch,getState)=>{
@@ -66,5 +67,6 @@ export const deleteCard = (id)=> async (dispatch)=>{
     const { data } = await contact.delete(`/giftcard/${id}`)
 
     dispatch ({type: DELETE_CARD, payload:data})
+    history.push('/deletepage');
 }
 

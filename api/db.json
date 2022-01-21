@@ -1,50 +1,6 @@
 {
-  "contact": [
-    {
-      "name": "Zahra",
-      "surname": "Huseynova",
-      "email": "zahra.huseynova@gmail.com",
-      "phone": "168998",
-      "contactReason": "status",
-      "order": "15",
-      "comment": "vvv",
-      "id": 1
-    },
-    {
-      "card": "50",
-      "id": 2
-    },
-    {
-      "name": "Zahra",
-      "surname": "Huseynova",
-      "email": "zahra.huseynova@gmail.com",
-      "phone": "0507479764",
-      "contactReason": "status",
-      "order": "15",
-      "comment": "Number",
-      "userId": "109232611272471206484",
-      "id": 3
-    }
-  ],
-  "giftcard": [
-    {
-      "card": "25",
-      "id": 1
-    },
-    {
-      "card": "$50",
-      "id": 2
-    },
-    {
-      "card": "$50",
-      "id": 3
-    },
-    {
-      "card": "$100",
-      "userId": "109232611272471206484",
-      "id": 4
-    }
-  ],
+  "contact": [],
+  "giftcard": [],
   "plants": [
     {
       "id": 0,
