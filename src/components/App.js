@@ -14,6 +14,8 @@ import ShowPage from './ShowPage';
 import adminPage from './Admin/adminPage';
 import history from '../history';
 import DeletePage from './Admin/deletePage';
+import NewOnes from './NewPlants';
+import EasyCare from './EasyCare';
 
 
 const App=()=>{
@@ -31,8 +33,11 @@ const App=()=>{
                 <Route path="/contact" component={Contact} exact/>
                 <Route path="/about" component={AboutUs} exact/>
                 <Route path="/showpage" component={ShowPage} exact/>
-                <Route path="/contactadmin/" component={adminPage}/>
-                <Route path="/deletepage/:id" component={DeletePage}/>
+                <Route path="/contactadmin" component={adminPage} exact/>
+                <Route path="/newarrivals" component={NewOnes} exact/>
+                <Route path="/easycare" component={EasyCare} exact/>
+                <Route path="/deletepage/:id" component={DeletePage} exact/>
+
             <Footer/>
             </Router>
         </div>

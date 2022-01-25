@@ -1,3 +1,8 @@
+import { Link } from "react-router-dom";
+
+
+
+
 const Featured =()=>{
     return(
         <div className="ui container">
@@ -11,7 +16,7 @@ const Featured =()=>{
                             </div>
                             <br/>
                             <div className="ui item">
-                            Sale
+                            <Link to="/sale">Sale</Link>
                             <i className="long arrow alternate right icon"></i>
                             </div>
                         </div>
@@ -21,7 +26,7 @@ const Featured =()=>{
                             </div>
                             <br/>
                             <div className="ui item">
-                            Gifts
+                            <Link to="/gift">Gifts</Link>
                             <i className="long arrow alternate right icon"></i>
                             </div>
                         </div>
@@ -31,7 +36,7 @@ const Featured =()=>{
                             </div>
                             <br/>
                             <div className="ui item">
-                            Best Sellers
+                            <Link to="/newarrivals"> New Arrivals</Link>
                             <i className="long arrow alternate right icon"></i>
                             </div>
                         </div>
@@ -41,7 +46,7 @@ const Featured =()=>{
                             </div>
                             <br/>
                             <div className="ui item">
-                            Holiday collection
+                            <Link to="/easycare"> Easy-Care</Link>
                             <i className="long arrow alternate right icon"></i>
                             </div>
                         </div>

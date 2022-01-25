@@ -38,7 +38,7 @@ class DeletePage extends Component{
 
     renderButtonToAdmin(){
         return(
-            <Link to="/adminpage" className="ui button primary"> Go to Admin Page</Link>
+            <Link to="/contactadmin" className="ui button primary"> Go to Admin Page</Link>
         )
     }
 
@@ -53,6 +53,7 @@ class DeletePage extends Component{
                 </div> 
                 
                 <div className="ui segment">{this.renderButtonToAdmin()}</div>
+                <button>Hello</button>
             </div>
         )
     }
