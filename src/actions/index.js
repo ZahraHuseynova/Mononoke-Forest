@@ -67,6 +67,24 @@ export const deleteCard = (id)=> async (dispatch)=>{
     const { data } = await contact.delete(`/giftcard/${id}`)
 
     dispatch ({type: DELETE_CARD, payload:data})
-    history.push('/deletepage');
+    history.push('/');
 }
 
+export const fetchPlants = ( ) => async (dispatch)=>{
+    const {data} = await contact.get('/plants');
+
+    dispatch ({ type: FETCH_PLANTS ,payload: data})
+}
+
+export const fetchPlant = (id)=> async (dispatch)=>{
+    const {data} =await contact.get(`/plants/${id}`)
+
+    dispatch ({ type: FETCH_PLANT,payload:data});
+}
+
+export const deletePlant =(id)=> async (dispatch)=>{
+    const { data } = await contact.delete(`/plants/${id}`)
+
+    dispatch ({type:DELETE_PLANT,payload:data});
+    history.push('/')
+}

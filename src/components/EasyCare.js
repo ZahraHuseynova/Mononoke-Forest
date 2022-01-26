@@ -5,12 +5,12 @@ class EasyCare extends Component{
         return( 
         <div className="ui container" style={{ padding:'30px'}}>
             <div className="ui vertical segment">
-                <div className="ui header" style={{ fontSize:'4em'}}>Trending now ...</div>
+                <div className="ui header" style={{ fontSize:'4em'}}>Easy-Care ...</div>
                 <div className="ui four stackable cards">
                     <div className="card">
                         <div className=" ui fluid image">
                             <div className="ui teal ribbon label">
-                                <i className="star icon">Limited Time Only</i>
+                                <i className="star icon">New Arrival</i>
                             </div>
                             <img src="../assets/trending1.jpg" alt="trendig"/>
                         </div>

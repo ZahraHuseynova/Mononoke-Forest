@@ -11,7 +11,7 @@ const Links =()=>{
                             <p>Enjoy plants, pots, botanicals and more delivered to your door. Our plant care library and virtual workshops provide support and encouragement to all plant parents.</p>
                         </div>
                         <div className="column">
-                           <Link to='/subscribe'> <img className="ui tiny image" src="../assets/sups.jpg" alt="sups"/> </Link>
+                           <Link to='/subscription'> <img className="ui tiny image" src="../assets/sups.jpg" alt="sups"/> </Link>
                             <h2>Subscribe</h2>
                             <p>Look forward to a new plant every month. We choose for you from best sellers and subscriber-only plants, while you enjoy free shipping and other community perks.</p>
                         </div>
