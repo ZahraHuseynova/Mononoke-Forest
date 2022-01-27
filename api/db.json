@@ -20,7 +20,7 @@
       "name": "Calathea",
       "image": "../assets/calathea.jpg",
       "details": "Nicknamed the “swiss cheese plant”, the Monstera deliciosa is famous for its quirky natural leaf holes. These holes are theorized to maximize sun fleck capture on the forest floor. Depending on the season and maturity of the plant, your Monstera could arrive with no holes just yet, and be sized to grow alongside you. ",
-      "status": "Availabe",
+      "status": "Limited Time Only",
       "price": "$55-$65",
       "water": "Water every 2–3 weeks",
       "light": "Medium to low indirect light",
@@ -40,7 +40,7 @@
     },
     {
       "id": 3,
-      "category": "new",
+      "category": "New Arrival",
       "name": "Croton",
       "image": "../assets/croton.jpg",
       "details": "Nicknamed the “swiss cheese plant”, the Monstera deliciosa is famous for its quirky natural leaf holes. These holes are theorized to maximize sun fleck capture on the forest floor. Depending on the season and maturity of the plant, your Monstera could arrive with no holes just yet, and be sized to grow alongside you. ",
@@ -52,11 +52,11 @@
     },
     {
       "id": 4,
-      "category": "new",
+      "category": "New Arrival",
       "name": "Marble",
       "image": "../assets/marble.jpg",
       "details": "Nicknamed the “swiss cheese plant”, the Monstera deliciosa is famous for its quirky natural leaf holes. These holes are theorized to maximize sun fleck capture on the forest floor. Depending on the season and maturity of the plant, your Monstera could arrive with no holes just yet, and be sized to grow alongside you. ",
-      "status": "Availabe",
+      "status": "Limited Time Only",
       "price": "$65",
       "water": "Water every 2–3 weeks",
       "light": "Medium to low indirect light",
@@ -100,7 +100,7 @@
     },
     {
       "id": 8,
-      "category": "new",
+      "category": "New Arrival",
       "name": "Arrowhead Plant",
       "image": "../assets/palm.jpg",
       "details": "Nicknamed the “swiss cheese plant”, the Monstera deliciosa is famous for its quirky natural leaf holes. These holes are theorized to maximize sun fleck capture on the forest floor. Depending on the season and maturity of the plant, your Monstera could arrive with no holes just yet, and be sized to grow alongside you. ",
@@ -140,7 +140,7 @@
       "name": "String of Pearls",
       "image": "../assets/trending4.jpg",
       "details": "Nicknamed the “swiss cheese plant”, the Monstera deliciosa is famous for its quirky natural leaf holes. These holes are theorized to maximize sun fleck capture on the forest floor. Depending on the season and maturity of the plant, your Monstera could arrive with no holes just yet, and be sized to grow alongside you. ",
-      "status": "$21+",
+      "status": "Limited Time Only",
       "price": "$45",
       "water": "Water every 2–3 weeks",
       "light": "Medium to low indirect light",
@@ -176,7 +176,7 @@
       "name": "Parent Set",
       "image": "../assets/trending3.jpg",
       "details": "Nicknamed the “swiss cheese plant”, the Monstera deliciosa is famous for its quirky natural leaf holes. These holes are theorized to maximize sun fleck capture on the forest floor. Depending on the season and maturity of the plant, your Monstera could arrive with no holes just yet, and be sized to grow alongside you. ",
-      "status": "Availabe",
+      "status": "Available",
       "price": "$50-$60",
       "water": "Water every 2–3 weeks",
       "light": "Medium to low indirect light",
@@ -184,7 +184,7 @@
     },
     {
       "id": 15,
-      "category": "new",
+      "category": "New Arrival",
       "name": "Croton",
       "image": "../assets/croton.jpg",
       "details": "Nicknamed the “swiss cheese plant”, the Monstera deliciosa is famous for its quirky natural leaf holes. These holes are theorized to maximize sun fleck capture on the forest floor. Depending on the season and maturity of the plant, your Monstera could arrive with no holes just yet, and be sized to grow alongside you. ",
@@ -196,7 +196,7 @@
     },
     {
       "id": 16,
-      "category": "new",
+      "category": "New Arrival",
       "name": "Marble",
       "image": "../assets/marble.jpg",
       "details": "Nicknamed the “swiss cheese plant”, the Monstera deliciosa is famous for its quirky natural leaf holes. These holes are theorized to maximize sun fleck capture on the forest floor. Depending on the season and maturity of the plant, your Monstera could arrive with no holes just yet, and be sized to grow alongside you. ",
@@ -243,8 +243,8 @@
       "discount": "15% Off with SUB15"
     },
     {
-      "id": 8,
-      "category": "new",
+      "id": 20,
+      "category": "New Arrival",
       "name": "Arrowhead Plant",
       "image": "../assets/palm.jpg",
       "details": "Nicknamed the “swiss cheese plant”, the Monstera deliciosa is famous for its quirky natural leaf holes. These holes are theorized to maximize sun fleck capture on the forest floor. Depending on the season and maturity of the plant, your Monstera could arrive with no holes just yet, and be sized to grow alongside you. ",
@@ -253,6 +253,19 @@
       "water": "Water every 2–3 weeks",
       "light": "Medium to low indirect light",
       "discount": "no"
+    },
+    {
+      "id": 21,
+      "category": "gift",
+      "name": "Give as a gift",
+      "image": "../assets/month.jpg",
+      "details": "Nicknamed the “swiss cheese plant”, the Monstera deliciosa is famous for its quirky natural leaf holes. These holes are theorized to maximize sun fleck capture on the forest floor. Depending on the season and maturity of the plant, your Monstera could arrive with no holes just yet, and be sized to grow alongside you. ",
+      "status": "Availabe",
+      "price": "$150-$390",
+      "water": "Water every 2–3 weeks",
+      "light": "Medium to low indirect light",
+      "discount": "gift"
     }
+    
   ]
 }

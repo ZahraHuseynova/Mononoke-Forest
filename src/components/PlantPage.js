@@ -25,10 +25,11 @@ class Plants extends Component{
     renderPlantList(){
         return (
             this.props.plants.map(plant=>{
-                if(plant){
+                if(plant.discount === "15% Off with SUB15"){
                     return(
                         <div className="card" key={plant.id}> 
                         <div className=" ui fluid image">
+                            
                             <div className="ui teal ribbon label">
                                 <i className="star icon">{plant.discount}</i>
                             </div>
@@ -40,10 +41,34 @@ class Plants extends Component{
                         </div>
                     </div>
                     )
+                } else if(plant.discount === "50% Off"){
+                    return (<div className="card" key={plant.id}> 
+                    <div className=" ui fluid image">
+                        
+                        <div className="ui red ribbon label">
+                            <i className="star icon">{plant.discount}</i>
+                        </div>
+                        <img src={plant.image} alt={plant.name}/>
+                    </div>
+                    <div className="extra content">
+                        <span className="left floated text"><strong>{plant.name}</strong></span>
+                        <span className="right floated text">{plant.price}</span>
+                    </div>
+                </div>)
+                } else if(plant.discount === "no"){
+                    return (<div className="card" key={plant.id}> 
+                    <div className=" ui fluid image">
+                        <img src={plant.image} alt={plant.name}/>
+                    </div>
+                    <div className="extra content">
+                        <span className="left floated text"><strong>{plant.name}</strong></span>
+                        <span className="right floated text">{plant.price}</span>
+                    </div>
+                </div>)
                 } else {
                     return null;
                 }
-            })
+            }) 
         )
     }
     render(){

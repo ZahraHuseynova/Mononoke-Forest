@@ -1,7 +1,49 @@
 import { Component } from "react";
 import '../css/Sub.css';
+import { fetchPlants } from '../actions'
+import { connect } from 'react-redux';
 
 class Sub extends Component{
+    componentDidMount(){
+        this.props.fetchPlants();
+    }
+
+    renderSubList(){
+        return(
+            this.props.plants.map(plant=>{
+                if(plant.discount === "15% Off with SUB15"){
+                    return(
+                    <div className="card" key={plant.id}> 
+                        <div className=" ui fluid image">
+                        
+                        <div className="ui teal ribbon label">
+                            <i className="star icon">{plant.discount}</i>
+                        </div>
+                        <img src={plant.image} alt={plant.name}/>
+                        </div>
+                        <div className="extra content">
+                        <span className="left floated text"><strong>{plant.name}</strong></span>
+                        <span className="right floated text">{plant.price}</span>
+                        </div>
+                    </div>
+                    )
+                    
+                } else if(plant.discount === "gift"){
+                    return (<div className="card" key={plant.id}> 
+                    <div className=" ui fluid image">
+                        <img src={plant.image} alt={plant.name}/>
+                    </div>
+                    <div className="extra content">
+                        <span className="left floated text"><strong>{plant.name}</strong></span>
+                        <span className="right floated text">{plant.price}</span>
+                    </div>
+                </div>)
+                } else {
+                    return null;
+                }
+            })
+        )
+    }
     render() {
         return (
         <div className="ui container">
@@ -20,8 +62,8 @@ class Sub extends Component{
                 </div>
             </div>
             <div className="ui three stackable cards">
-                    
-                    <div className="card">
+                    {this.renderSubList()}
+                    {/* <div className="card">
                         <div className="ui fluid image">
                             <div className="ui red ribbon label">
                                 <i className="star icon">15% Off with SUB15</i>
@@ -55,7 +97,7 @@ class Sub extends Component{
                             <span className="left floated text"><strong>Give as a Gift</strong></span>
                             <span className="right floated text">$150-$390</span>
                         </div>
-                    </div>
+                    </div> */}
                 </div>
                 <div className="ui vertical segment" style={{marginTop:'50px'}}>
                     <div className="ui left aligned grid" style={{backgroundColor:"rgb(237, 253, 251)",fontFamily:'Times New Roman, Times, serif'}}>
@@ -170,4 +212,10 @@ class Sub extends Component{
     }
 }
 
-export default Sub;
+const mapStateToProps=(state)=>{
+    return{
+        plants:Object.values(state.plants)
+    }
+}
+
+export default connect(mapStateToProps,{fetchPlants})(Sub);
