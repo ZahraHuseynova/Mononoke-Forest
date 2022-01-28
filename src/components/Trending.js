@@ -1,5 +1,6 @@
 import { Component } from "react";
 import { connect } from 'react-redux';
+import { Link } from "react-router-dom";
 import { fetchPlants } from '../actions';
 
 class Trending extends Component{
@@ -7,12 +8,16 @@ class Trending extends Component{
         this.props.fetchPlants();
     }
 
+    
+
     renderTrendingList(){
         return(
             this.props.plants.map(plant=>{
                 if(plant.status === "Limited Time Only"){
                     return(
                     <div className="card" key={plant.id}> 
+                    {/* {this.renderPlants(plant)} */}
+                    <Link to={`/showpage/${plant.id}`}>
                         <div className=" ui fluid image">
                             
                             <div className="ui red ribbon label">
@@ -24,6 +29,7 @@ class Trending extends Component{
                             <span className="left floated text"><strong>{plant.name}</strong></span>
                             <span className="right floated text">{plant.price}</span>
                         </div>
+                        </Link>
                     </div>
                     )
                 }else {
@@ -101,7 +107,8 @@ class Trending extends Component{
 
 const mapStateToProps =(state)=>{
     return{
-        plants:Object.values(state.plants)
+        plants:Object.values(state.plants),
+        currentUserId:state.auth.userId
     }
 }
 export default connect(mapStateToProps,{fetchPlants})(Trending);

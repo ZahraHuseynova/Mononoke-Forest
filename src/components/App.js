@@ -23,20 +23,22 @@ const App=()=>{
         <div>
             <Router history={history}>
             <Header/>
-                <Route path="/" component={MainPage} exact/>
-                <Route path="/plants" component={Plants} exact/>
-                <Route path="/sale" component={SalePage} exact/>
-                <Route path="/subscription" component={SubPage} exact/>
-                <Route path="/stores" component={StoreLoc} exact/>
-                <Route path="/gift" component={GiftCard} exact/>
-                <Route path="/shipping" component={Shipping} exact/>
-                <Route path="/contact" component={Contact} exact/>
-                <Route path="/about" component={AboutUs} exact/>
-                <Route path="/showpage" component={ShowPage} exact/>
-                <Route path="/contactadmin" component={adminPage} exact/>
-                <Route path="/newarrivals" component={NewOnes} exact/>
-                <Route path="/easycare" component={EasyCare} exact/>
-                <Route path="/deletepage/:id" component={DeletePage} exact/>
+                <Switch>
+                    <Route path="/" component={MainPage} exact/>
+                    <Route path="/plants" component={Plants} exact/>
+                    <Route path="/sale" component={SalePage} exact/>
+                    <Route path="/subscription" component={SubPage} exact/>
+                    <Route path="/stores" component={StoreLoc} exact/>
+                    <Route path="/gift" component={GiftCard} exact/>
+                    <Route path="/shipping" component={Shipping} exact/>
+                    <Route path="/contact" component={Contact} exact/>
+                    <Route path="/about" component={AboutUs} exact/>
+                    <Route path="/contactadmin" component={adminPage} exact/>
+                    <Route path="/newarrivals" component={NewOnes} exact/>
+                    <Route path="/easycare" component={EasyCare} exact/>
+                    <Route path="/deletepage/:id" component={DeletePage} exact/>
+                    <Route path="/showpage/:id" component={ShowPage} exact/>
+                </Switch>
 
             <Footer/>
             </Router>

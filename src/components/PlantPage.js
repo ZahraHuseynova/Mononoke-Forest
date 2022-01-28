@@ -1,5 +1,6 @@
 import { Component } from "react";
 import { connect } from 'react-redux';
+import { Link } from "react-router-dom";
 import { fetchPlants } from "../actions";
 import Accordion from "./Accordion";
 
@@ -27,7 +28,8 @@ class Plants extends Component{
             this.props.plants.map(plant=>{
                 if(plant.discount === "15% Off with SUB15"){
                     return(
-                        <div className="card" key={plant.id}> 
+                        <div className="card" key={plant.id}>
+                            <Link to={`/showpage/${plant.id}`}> 
                         <div className=" ui fluid image">
                             
                             <div className="ui teal ribbon label">
@@ -39,10 +41,12 @@ class Plants extends Component{
                             <span className="left floated text"><strong>{plant.name}</strong></span>
                             <span className="right floated text">{plant.price}</span>
                         </div>
+                        </Link>
                     </div>
                     )
                 } else if(plant.discount === "50% Off"){
                     return (<div className="card" key={plant.id}> 
+                    <Link to={`/showpage/${plant.id}`}>
                     <div className=" ui fluid image">
                         
                         <div className="ui red ribbon label">
@@ -54,9 +58,11 @@ class Plants extends Component{
                         <span className="left floated text"><strong>{plant.name}</strong></span>
                         <span className="right floated text">{plant.price}</span>
                     </div>
+                    </Link>
                 </div>)
                 } else if(plant.discount === "no"){
-                    return (<div className="card" key={plant.id}> 
+                    return (<div className="card" key={plant.id}>
+                        <Link to={`/showpage/${plant.id}`}> 
                     <div className=" ui fluid image">
                         <img src={plant.image} alt={plant.name}/>
                     </div>
@@ -64,6 +70,7 @@ class Plants extends Component{
                         <span className="left floated text"><strong>{plant.name}</strong></span>
                         <span className="right floated text">{plant.price}</span>
                     </div>
+                    </Link>
                 </div>)
                 } else {
                     return null;

@@ -2,6 +2,7 @@ import { Component } from "react";
 import { fetchCards } from "../actions";
 import { connect } from 'react-redux' 
 import Accordion from "./Accordion";
+import { Link } from "react-router-dom";
 
 const items =[
     {
@@ -28,6 +29,7 @@ class Sale extends Component{
                 if(plant.discount==="15% Off with SUB15"){
                     return(
                         <div className="card" key={plant.id}> 
+                        <Link to={`/showpage/${plant.id}`}>
                         <div className=" ui fluid image">
                             
                             <div className="ui teal ribbon label">
@@ -39,12 +41,13 @@ class Sale extends Component{
                             <span className="left floated text"><strong>{plant.name}</strong></span>
                             <span className="right floated text">{plant.price}</span>
                         </div>
+                        </Link>
                     </div>
                     )
                 } else if (plant.discount === "50% Off"){
                     return (<div className="card" key={plant.id}> 
+                    <Link to={`/showpage/${plant.id}`}>
                     <div className=" ui fluid image">
-                        
                         <div className="ui red ribbon label">
                             <i className="star icon">{plant.discount}</i>
                         </div>
@@ -54,6 +57,7 @@ class Sale extends Component{
                         <span className="left floated text"><strong>{plant.name}</strong></span>
                         <span className="right floated text">{plant.price}</span>
                     </div>
+                    </Link>
                 </div>)
                 } else {
                     return null
@@ -69,90 +73,6 @@ class Sale extends Component{
                     <p style={{color:'#00ab84',fontSize:'1.5em'}}>Shop up to 50% off top-selling plants, planers,holiday bundles,and so much more. Items are limited!</p>
                     <div className="ui three stackable cards">
                         {this.renderSaleplants()}
-                    {/* <div className="card">
-                        <div className=" ui fluid image">
-                            <div className="ui teal ribbon label">
-                                <i className="star icon">Limited Time Only</i>
-                            </div>
-                            <img src="../assets/autumn.jpg" alt="trendig"/>
-                        </div>
-                        <div className="extra content">
-                            <span className="left floated text"><strong>Autumn Fern</strong></span>
-                            <span className="right floated text">$33-$55</span>
-                        </div>
-                    </div>
-                    <div className="card">
-                        <div className="ui fluid image">
-                        <div className="ui teal ribbon label">
-                                <i className="star icon">50% Off</i>
-                            </div>
-                            <img src="../assets/hoya.jpg" alt="trendig"/>
-                        </div>
-                        <div className="extra content">
-                            <span className="left floated text"><strong>Hoya</strong></span>
-                            <span className="right floated text">
-                                <s>$45</s> &nbsp;
-                                <span style={{color:'red'}}>$21+</span>
-                            </span>
-                        </div>
-                    </div>
-                    <div className="card">
-                        <div className="ui fluid image">
-                            <div className="ui teal ribbon label">
-                                <i className="star icon">Limited Time Only</i>
-                            </div>
-                            <img src="../assets/pet-friendly.jpg" alt="trendig"/>
-                        </div>
-                        <div className="extra content">
-                            <span className="left floated text"><strong>Arrowhead Plant</strong></span>
-                            <span className="right floated text">$54-$65</span>
-                        </div>
-                    </div>
-                    <div className="card">
-                        <div className="ui fluid image">
-                            <div className="ui teal ribbon label">
-                                <i className="star icon">50% Off</i>
-                            </div>
-                            <img src="../assets/trending4.jpg" alt="trendig"/>
-                        </div>
-                        <div className="extra content">
-                            <span className="left floated text"><strong>String of Pearls</strong></span>
-                            <span className="right floated text">
-                                <s>$45</s> &nbsp;
-                                <span style={{color:'red'}}>$21+</span>
-                            </span>
-                        </div>
-                    </div>
-                    <div className="card">
-                        <div className="ui fluid image">
-                            <div className="ui teal ribbon label">
-                                <i className="star icon">50% Off</i>
-                            </div>
-                            <img src="../assets/croton.jpg" alt="trendig"/>
-                        </div>
-                        <div className="extra content">
-                            <span className="left floated text"><strong>String of Pearls</strong></span>
-                            <span className="right floated text">
-                                <s>$45</s> &nbsp;
-                                <span style={{color:'red'}}>$21+</span>
-                            </span>
-                        </div>
-                    </div>
-                    <div className="card">
-                        <div className="ui fluid image">
-                            <div className="ui teal ribbon label">
-                                <i className="star icon">50% Off</i>
-                            </div>
-                            <img src="../assets/palm.jpg" alt="trendig"/>
-                        </div>
-                        <div className="extra content">
-                            <span className="left floated text"><strong>String of Pearls</strong></span>
-                            <span className="right floated text">
-                                <s>$45</s> &nbsp;
-                                <span style={{color:'red'}}>$21+</span>
-                            </span>
-                        </div>
-                    </div> */}
                 </div>
     
                 <div className="ui left aligned grid">

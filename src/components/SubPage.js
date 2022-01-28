@@ -2,6 +2,7 @@ import { Component } from "react";
 import '../css/Sub.css';
 import { fetchPlants } from '../actions'
 import { connect } from 'react-redux';
+import { Link } from 'react-router-dom';
 
 class Sub extends Component{
     componentDidMount(){
@@ -13,7 +14,8 @@ class Sub extends Component{
             this.props.plants.map(plant=>{
                 if(plant.discount === "15% Off with SUB15"){
                     return(
-                    <div className="card" key={plant.id}> 
+                    <div className="card" key={plant.id}>
+                        <Link to={`/showpage/${plant.id}`}> 
                         <div className=" ui fluid image">
                         
                         <div className="ui teal ribbon label">
@@ -25,11 +27,13 @@ class Sub extends Component{
                         <span className="left floated text"><strong>{plant.name}</strong></span>
                         <span className="right floated text">{plant.price}</span>
                         </div>
+                        </Link>
                     </div>
                     )
                     
                 } else if(plant.discount === "gift"){
                     return (<div className="card" key={plant.id}> 
+                    <Link to="/gift">
                     <div className=" ui fluid image">
                         <img src={plant.image} alt={plant.name}/>
                     </div>
@@ -37,6 +41,7 @@ class Sub extends Component{
                         <span className="left floated text"><strong>{plant.name}</strong></span>
                         <span className="right floated text">{plant.price}</span>
                     </div>
+                    </Link>
                 </div>)
                 } else {
                     return null;

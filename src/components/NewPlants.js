@@ -1,6 +1,7 @@
 import { Component } from "react";
 import { connect } from 'react-redux';
 import { fetchPlants } from '../actions'
+import { Link } from 'react-router-dom';
 
 class NewOnes extends Component{
 
@@ -14,6 +15,7 @@ class NewOnes extends Component{
                 if(plant.category ==='New Arrival'){
                     return(
                     <div className="card" key={plant.id}> 
+                        <Link to={`/showpage/${plant.id}`}>
                         <div className=" ui fluid image">
                             
                             <div className="ui red ribbon label">
@@ -25,6 +27,7 @@ class NewOnes extends Component{
                             <span className="left floated text"><strong>{plant.name}</strong></span>
                             <span className="right floated text">{plant.price}</span>
                         </div>
+                        </Link>
                     </div>
                     )
                 }else{

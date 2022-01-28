@@ -1,72 +1,101 @@
 import { Component } from 'react';
+import { connect } from 'react-redux';
+import { Link } from 'react-router-dom';
+import { fetchPlant } from '../actions';
 
 
 class ShowPage extends Component{
-    render(){
-        return(
-            <div className='ui container'>
-                <div className='ui vertical segment'>
-                    <div className="ui left aligned grid">
-                        <div className="left aligned two column row">
-                            <div className="column">
-                                <div className='ui grid'>
-                                    <div className='three wide column'>
-                                        <img className='ui tiny image' src="../assets/detail1.jpg" alt="forest"/><br/>
-                                        <img className='ui tiny image'src="../assets/detail2.jpg" alt="forest"/><br/>
-                                        <img className='ui tiny image' src="../assets/detail3.jpg" alt="forest"/><br/>
-                                        <img className='ui tiny image' src="../assets/trending3.jpg" alt="forest"/>
-                                    </div>
-                                    <div className='twelve wide column'>
-                                        <img  className='ui massive image' src="../assets/trending3.jpg" alt="forest"/>
-                                    </div>
+
+    componentDidMount(){
+        this.props.fetchPlant(this.props.match.params.id);
+    }
+
+    renderPlants(){
+        if(!this.props.plants){
+            return(
+                <div>
+                    Loading...
+                </div>
+            )
+        } 
+        
+        else {
+            return (
+                
+            <div className='ui vertical segment'>
+            <div className="ui left aligned grid">
+                <div className="left aligned two column row">
+                    <div className="column">
+                        <div className='ui grid'>
+                            <div className='three wide column'>
+                                <img className='ui tiny image' src={this.props.plants.image} alt={this.props.plants.name}/><br/>
+                                <img className='ui tiny image' src={this.props.plants.image} alt={this.props.plants.name}/><br/>
+                                <img className='ui tiny image' src={this.props.plants.image} alt={this.props.plants.name}/><br/>
+                                <img className='ui tiny image' src={this.props.plants.image} alt={this.props.plants.name}/>
+                            </div>
+                            <div className='twelve wide column'>
+                                <img  className='ui massive image' src={this.props.plants.image} alt={this.props.plants.name}/>
+                            </div>
+                        </div>
+                    </div>
+                    <div className="column">
+                        <div className="ui left aligned header" >
+                            <h1 style={{fontSize:'3em',fontFamily:'Times New Roman, Times, serif'}}>{this.props.plants.name} <br/>{this.props.plants.price}</h1>
+                        </div>
+                        <div className='ui left aligned grid'>
+                            <div className='left aligned two column row'>
+                                <div className='column'>
+                                    <h3>Quantity</h3>
+                                </div>
+                                <div className='column'>
+                                <button class="ui compact icon button"><i class="plus icon"></i></button>
+                                    <button class="compact ui button">
+                                        1
+                                    </button>
+                                    <button class="ui compact icon button"><i class="minus icon"></i></button>
                                 </div>
                             </div>
-                            <div className="column">
-                                <div className="ui left aligned header" >
-                                    <h1 style={{fontSize:'3em',fontFamily:'Times New Roman, Times, serif'}}>Pet-Friendly Plant Parent Set <br/>$38</h1>
-                                </div>
-                                <div className='ui left aligned grid'>
-                                    <div className='left aligned two column row'>
-                                        <div className='column'>
-                                            <h3>Quantity</h3>
-                                        </div>
-                                        <div className='column'>
-                                        <button class="ui compact icon button"><i class="plus icon"></i></button>
-                                            <button class="compact ui button">
-                                                1
-                                            </button>
-                                            <button class="ui compact icon button"><i class="minus icon"></i></button>
-                                        </div>
-                                    </div>
-                                </div>
-                                <button className='ui fluid button' style={{backgroundColor:'#00ab84',color:'white'}}>
-                                <s style={{color:'black'}}>$45</s> $31 - Add to Cart
-                                </button>
-                                <br/>
-                                <div className='ui grid'>
-                                    <div className='three wide column'>
-                                        <h3>Details</h3>
-                                    </div>
-                                    <div className='twelve wide column'>
-                                        <p>Jumpstart your indoor jungle with our favorite plant picks that are safe around pets! Choose between 3 or 5 pet friendly low maintenance houseplants. Plant picks change seasonally and will arrive in nursery pots ranging from 2.5" wide to 6" wide in diameter. A variety of sizes are included in each box. It also makes for a great gift for any budding plant parent!</p>
-                                        <p>We cannot currently accommodate special requests or exchanges on plant types.</p>
-                                    </div>
-                                </div>
-                                <div className='ui grid'>
-                                    <div className='three wide column'>
-                                        <h4>Plant care</h4>
-                                    </div>
-                                    <div className='twelve wide column'>
-                                        <i className='sun icon'></i> <span>Bright indirect to medium light</span><br/>
-                                        <i className='tint icon'></i>
-                                        <span>Water every 1–2 weeks</span><br/>
-                                        <i className='paw icon'></i><span>Pet-friendly</span>
-                                    </div>
-                                </div>
+                        </div>
+                        <button className='ui fluid button' style={{backgroundColor:'#00ab84',color:'white'}}>
+                        <s style={{color:'black'}}>$45</s> {this.props.plants.price}- Add to Cart
+                        </button>
+                        <br/>
+                        <div className='ui grid'>
+                            <div className='three wide column'>
+                                <h3>Details</h3>
+                            </div>
+                            <div className='twelve wide column'>
+                                <p>{this.props.plants.details}</p>
+                            </div>
+                        </div>
+                        <div className='ui grid'>
+                            <div className='three wide column'>
+                                <h4>Plant care</h4>
+                            </div>
+                            <div className='twelve wide column'>
+                                <i className='sun icon'></i> <span>{this.props.plants.light}</span><br/>
+                                <i className='tint icon'></i>
+                                <span>{this.props.plants.water}</span><br/>
+                                <i className='paw icon'></i><span>{this.props.plants.category}</span>
                             </div>
                         </div>
                     </div>
                 </div>
+            </div>
+        </div>
+        
+        )
+        }
+    }
+
+
+
+
+
+    render(){
+        return(
+            <div className='ui container'>
+                {this.renderPlants()}
                 <div style={{backgroundColor:'rgb(233, 229, 229)',padding:'15px'}}> 
                 <div className="ui header" style={{ fontSize:'3em'}}>You Might Like</div>
                     <div className="ui four stackable cards" >
@@ -139,7 +168,7 @@ class ShowPage extends Component{
                                 <p>→ Includes easy-care plant & chic ceramic pot</p>
                                 <p>→ Plant variety changes month to month</p>
                                 <p> → Pause or cancel anytime after the first 3 plant deliveries</p>
-                                <button className='ui positive basic button'>Learn more</button>
+                                <Link to="/subscription" className='ui positive basic button'>Learn more</Link>
                             </div>
                         </div>
                     </div>
@@ -151,4 +180,9 @@ class ShowPage extends Component{
     }
 }
 
-export default ShowPage;
+const mapStateToProps =(state,ownProps)=>{
+    return{
+        plants: state.plants[ownProps.match.params.id]
+    }
+}
+export default connect(mapStateToProps,{fetchPlant})(ShowPage);
