@@ -267,5 +267,44 @@
       "discount": "gift"
     }
     
-  ]
+  ],
+  "subs":[
+    {
+      "id": 0,
+      "name": "Unbox Happiness",
+      "image": "../assets/unbox.jpg",
+      "details": "Every month, a plant and planter will be shipped to your door to enjoy. Rest assured your box will not repeat the same plant within a 6 month period. "
+    },
+    {
+      "id": 1,
+      "name": "Choose Your Plan",
+      "image": "../assets/pet.jpg",
+      "details": "Classic or Pet Friendly. We'll do the work, curating easy-care and non-toxic plants from our local growers--a mix of our top picks and exclusive plants just for subscribers. "
+    },
+    {
+      "id": 2,
+      "name": "Pick Your Planter",
+      "image": "../assets/pick.jpg",
+      "details": "Cream or Black. Our chic ceramic planters are designed by our team and manufactured by a women-owned pottery company. "
+    },
+    {
+      "id": 3,
+      "name": "Learn About Plants",
+      "image": "../assets/learn.jpg",
+      "details": "Learn about your new plant by visiting our digital Care Library, or check your email inbox for a monthly video on your plant of the month from our in-house expert.. "
+    },
+    {
+      "id": 4,
+      "name": "Enjoy Monthly,Guaranteed",
+      "image": "../assets/unbox.jpg",
+      "details": "Our subscription sets you up for plant parenthood success. We guarantee our plants arrive in happy, healthy condition, or we replace them for free. "
+    },
+    {
+      "id": 5,
+      "name": "Gift a Subscription",
+      "image": "../assets/gift.jpg",
+      "details": "Master the art of gift giving with a plant subscription box. We offer digital subscription gift cards that cover the cost of 3-month and 6-month subscription plans."
+    }
+  ],
+  "payment": []
 }

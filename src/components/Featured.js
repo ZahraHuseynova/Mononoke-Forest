@@ -11,44 +11,52 @@ const Featured =()=>{
                 <div className="ui left aligned grid" style={{ fontSize:'1.3em'}}>
                     <div className="left aligned four column row">
                         <div className="column">
+                        <Link to="/sale">
                             <div className="ui fluid image">
                                 <img src="../assets/collection.jpg" alt="collection"/>
                             </div>
                             <br/>
                             <div className="ui item">
-                            <Link to="/sale">Sale</Link>
+                            Sale
                             <i className="long arrow alternate right icon"></i>
                             </div>
+                            </Link>
                         </div>
                         <div className="column">
+                            <Link to="/gift">
                             <div className="ui fluid image">
                                 <img src="../assets/gifts.jpg" alt="gifts"/>
                             </div>
                             <br/>
                             <div className="ui item">
-                            <Link to="/gift">Gifts</Link>
+                            Gifts
                             <i className="long arrow alternate right icon"></i>
                             </div>
+                            </Link>
                         </div>
                         <div className="column">
-                            <div className="ui fluid image">
-                                <img src="../assets/holiday.jpg" alt="holiday"/>
-                            </div>
-                            <br/>
-                            <div className="ui item">
-                            <Link to="/newarrivals"> New Arrivals</Link>
-                            <i className="long arrow alternate right icon"></i>
-                            </div>
+                            <Link to="/newarrivals">
+                                <div className="ui fluid image">
+                                    <img src="../assets/holiday.jpg" alt="holiday"/>
+                                </div>
+                                <br/>
+                                <div className="ui item">
+                                New Arrivals
+                                <i className="long arrow alternate right icon"></i>
+                                </div>
+                            </Link>
                         </div>
                         <div className="column">
-                            <div className="ui fluid image">
-                                <img src="../assets/christmas.jpg" alt="christmas"/>
-                            </div>
-                            <br/>
-                            <div className="ui item">
-                            <Link to="/easycare"> Easy-Care</Link>
-                            <i className="long arrow alternate right icon"></i>
-                            </div>
+                            <Link to="/easycare">
+                                <div className="ui fluid image">
+                                    <img src="../assets/christmas.jpg" alt="christmas"/>
+                                </div>
+                                <br/>
+                                <div className="ui item">
+                                Easy-Care
+                                <i className="long arrow alternate right icon"></i>
+                                </div>
+                            </Link>
                         </div>
                     </div>
                 </div>

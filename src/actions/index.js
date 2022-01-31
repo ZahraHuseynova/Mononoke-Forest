@@ -1,5 +1,5 @@
 import { SIGN_IN,SIGN_OUT,FETCH_CARD,FETCH_CARDS,FETCH_CONTACT,FETCH_CONTACTS,FETCH_PLANT,FETCH_PLANTS,
-    CREATE_CARD,CREATE_CONTACT,EDIT_CARD,EDIT_PLANT,EDIT_CONTACT,DELETE_CARD,DELETE_PLANT,DELETE_CONTACT } from "./types"
+    CREATE_CARD,CREATE_CONTACT,EDIT_CARD,EDIT_PLANT,EDIT_CONTACT,DELETE_CARD,DELETE_PLANT,DELETE_CONTACT,FETCH_SUBS,CREATE_PAYMENT } from "./types"
 
 import contact from "../apis/contact"
 import history from "../history"
@@ -87,4 +87,17 @@ export const deletePlant =(id)=> async (dispatch)=>{
 
     dispatch ({type:DELETE_PLANT,payload:data});
     history.push('/')
+}
+
+export const fetchSubs = ( ) => async (dispatch)=>{
+    const {data} = await contact.get('/subs');
+
+    dispatch ({ type: FETCH_SUBS ,payload: data})
+}
+
+export const createPayment = (formValue) => async (dispatch,getState)=>{
+    const { userId} = getState().auth;
+    const { data } = await contact.post ('/payment',{...formValue,userId})
+
+    dispatch ({type:CREATE_PAYMENT , payload:data});
 }

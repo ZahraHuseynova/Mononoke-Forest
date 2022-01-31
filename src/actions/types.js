@@ -14,3 +14,5 @@ export const FETCH_CARDS="FETCH_CARDS"
 export const DELETE_CARD="DELETE_CARD";
 export const EDIT_CARD="EDIT_CARD";
 export const CREATE_CARD="CREATE_CARD"; 
+export const FETCH_SUBS="FETCH_SUBS";
+export const CREATE_PAYMENT='CREATE_PAYMENT';
