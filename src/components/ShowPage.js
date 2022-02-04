@@ -23,9 +23,12 @@ class ShowPage extends Component{
             return (
                 
             <div className='ui vertical segment'>
+               
             <div className="ui left aligned grid">
+                
                 <div className="left aligned two column row">
                     <div className="column">
+                        
                         <div className='ui grid'>
                             <div className='three wide column'>
                                 <img className='ui tiny image' src={this.props.plants.image} alt={this.props.plants.name}/><br/>
@@ -56,9 +59,11 @@ class ShowPage extends Component{
                                 </div>
                             </div>
                         </div>
+                        <Link to={`/payment/${this.props.plants.id}`}>
                         <button className='ui fluid button' style={{backgroundColor:'#00ab84',color:'white'}}>
                         <s style={{color:'black'}}>$45</s> {this.props.plants.price}- Add to Cart
                         </button>
+                        </Link>
                         <br/>
                         <div className='ui grid'>
                             <div className='three wide column'>
@@ -80,8 +85,11 @@ class ShowPage extends Component{
                             </div>
                         </div>
                     </div>
+                    
                 </div>
+                
             </div>
+            
         </div>
         
         )

@@ -2,119 +2,206 @@ import { Component } from "react";
 import { Field, reduxForm, reset } from 'redux-form';
 import { Link } from 'react-router-dom';
 import { connect } from "react-redux";
-import { createPayment } from "../actions";
+import { createPayment,fetchPlant } from "../actions";
 
 class Payment extends Component{
 
-  renderShipInput = ({input,label,placeholder})=>{
+  componentDidMount (){
+    this.props.fetchPlant(this.props.match.params.id);
+  }
+
+  renderPlant(){
+    if(!this.props.plants){
+      return(
+          <div>
+              Loading...
+          </div>
+      )
+    } else {
+      return(
+        <div className="item">
+          <div className=" ui small image">
+            <img src={this.props.plants.image} alt={this.props.plants.name}/>
+          </div>
+          <div className="content">
+            <a className="header">{this.props.plants.name}</a>
+            <div className="meta">
+              <span>{this.props.plants.price}</span>
+            </div>
+            <div className="description">
+              <p>{this.props.plants.details}</p>
+            </div>
+            <div className="extra">
+              Additional Details
+            </div>
+          </div>
+        </div>
+      )
+      
+    }
+  }
+
+  renderShipInput = ({input,label,placeholder,meta})=>{
         
     return (
         <div className='field'>
             <label>{label}</label>
             <input {...input} placeholder={placeholder}/> 
+            {this.renderError(meta)}
         </div>
         
     )
-}
+  }
 
-onSubmit = (formValues,dispatch) => {
-  dispatch(reset("payment")); 
-  this.props.createPayment(formValues)
-}
+  renderError=({error , touched})=>{
+    if(error && touched){
+        return(
+            <div className='ui error message'>
+                <div className='header'>{error}</div>
+            </div>
+        )
+    }
+  }
+
+  onSubmit = (formValues,dispatch) => {
+    console.log(formValues);
+    dispatch(reset("payment")); 
+    this.props.createPayment(formValues)
+  }
 
 
     render(){
         return(
-            <div>
-                <form className="ui form" onSubmit={this.props.handleSubmit(this.onSubmit)}>
-                  <Field name="name" component={this.renderShipInput} label="*Name" placeholder="Your Name"/>
-                <h4 className="ui dividing header">Shipping Information</h4>
-                <div className="field">
-                  <div class="two fields">
-                    <div class="field">
-                    <Field name="name" component={this.renderShipInput} label="*Name" placeholder="Your Name"/>
-                    </div>
-                    <div class="field">
-                    <Field name="surname" component={this.renderShipInput} label="*Surname" placeholder="Your Surname"/>
-                    </div>
-                  </div>
-                </div>
-                <div class="field">
-                  <label>Billing Address</label>
-                  <div class="fields">
-                    <div class="twelve wide field">
-                    <Field name="shipping[address]" component={this.renderShipInput} label="*Shipping Address" placeholder="Your Address"/>
-                      
-                    </div>
-                    <div class="four wide field">
-                    <Field name="shipping[address-2]" component={this.renderShipInput} label="*Shipping Address" placeholder="Your Apt #"/>
-                    </div>
-                  </div>
-                </div>
-                <h4 class="ui dividing header">Billing Information</h4>
-                <div class="field">
-                  <label>Card Type</label>
-                  <div class="ui selection dropdown">
-                  <Field
-                    name="card"
-                    component="select"
-                    >
-                    <option value="">Select card type</option>
-                    <option value="American Express">American Express</option>
-                    <option value="Visa">Visa</option>
-                    <option value="Discover">Discover</option>
-                    </Field>
-                    
-                    
-                  </div>
-                </div>
-                <div class="fields">
-                  <div class="seven wide field">
-                    <label>Card Number</label>
-                    <Field name="card[number]" component={this.renderShipInput} label="Card Numbers" placeholder="Card #"/>
-                  </div>
-                  <div class="three wide field">
-                    <label>CVC</label>
-                    <Field name="card[cvc]" component={this.renderShipInput} label="CVC" placeholder="CVC"/>
-                  </div>
-                  <div class="six wide field">
-                    <label>Expiration</label>
-                    <div class="two fields">
-                      <div class="field">
-                        <Field
-                          name="card"
-                          component="select"
-                        >
-                          <option value="">Select option</option>
-                          <option value="$25">$25</option>
-                          <option value="$50">$50</option>
-                          <option value="$100">$100</option>
-                        </Field>
+            <div className="ui container">
+              <div className="ui vertical segment ">
+                <div className="ui left aligned grid">
+                  <div className="left aligned two column row">
+                    <div className="column">
+                        <form className="ui form error" onSubmit={this.props.handleSubmit(this.onSubmit)}>
+                          <h4 className="ui dividing header">Shipping Information</h4>
+                          <div className="field">
+                            <div className="two fields">
+                              <div className="field">
+                              <Field name="name" component={this.renderShipInput} label="*Name" placeholder="Your Name"/>
+                              </div>
+                              <div classNames="field">
+                              <Field name="surname" component={this.renderShipInput} label="*Surname" placeholder="Your Surname"/>
+                              </div>
+                            </div>
+                          </div>
+                          <div classNames="fields">
+                        <div className="twelve wide field">
+                        <Field name="shippingAddress" component={this.renderShipInput} label="*Billing Address" placeholder="Your Address"/>
+                          
+                        </div>
+                        <div className="four wide field">
+                        <Field name="shippingAddress2" component={this.renderShipInput} label="*Shipping Address" placeholder="Your Apt #"/>
+                        </div>
                       </div>
-                      <div class="field">
-                      <Field name="card[expire-year]" component={this.renderShipInput} label="Year" placeholder="Year"/>
-                        
+                        <h4 className="ui dividing header">Billing Information</h4>
+                        <div className="field">
+                          <label>Card Type</label>
+                          <div className="field">
+                              <Field
+                                  name="cardType"
+                                  component="select"
+                                >
+                                  <option value="">Type</option>
+                                  <option value="amex">American Express</option>
+                                  <option value="visa">Visa</option>
+                                  <option value="disco">Discover</option>
+                                </Field>
+                          </div>
+                        </div>
+                        <div className="fields">
+                          <div className="seven wide field">
+                            
+                            <Field name="cardNumber" component={this.renderShipInput} label="Card Numbers" placeholder="Card #"/>
+                          </div>
+                          <div className="three wide field">
+                            
+                            <Field name="cardCvc" component={this.renderShipInput} label="CVC" placeholder="CVC"/>
+                          </div>
+                          <div className="six wide field">
+                            <label>Expiration</label>
+                            <div className="two fields">
+                              <div className="field">
+                                <Field
+                                  name="month"
+                                  component="select"
+                                >
+                                  <option value="">Month</option>
+                                  <option value="1">January</option>
+                                  <option value="2">February</option>
+                                  <option value="3">March</option>
+                                  <option value="4">April</option>
+                                  <option value="5">May</option>
+                                  <option value="6">June</option>
+                                  <option value="7">July</option>
+                                  <option value="8">August</option>
+                                  <option value="9">September</option>
+                                  <option value="10">October</option>
+                                  <option value="11">November</option>
+                                  <option value="12">December</option>
+
+                                </Field>
+                                
+                              </div>
+                              <div className="field">
+                              <Field name="cardYear" component={this.renderShipInput} label="Year" placeholder="Year"/>
+                                
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div className="ui button" tabindex="0">Submit Order</div>
+                      </form>
+                    </div>
+                    <div className="column">
+                      <div className="ui item">
+                          {this.renderPlant( )}
+                        </div>
                       </div>
-                    </div>
                   </div>
                 </div>
-                
-                <div class="ui segment">
-                  <div class="field">
-                    <div class="ui toggle checkbox">
-                    <Field class="hidden" name="gift" component={this.renderShipInput} label="Do not include a receipt in the package" />
-                    </div>
-                  </div>
-                </div>
-                <div class="ui button" tabindex="0">Submit Order</div>
-              </form>
+              </div>
             </div>
         )
     }
 }
 
+const validate = (formValue)=>{
+  const errors = {}
+  if(!formValue.name){
+      errors.name = 'You must enter your name'
+  }
+  if (!formValue.surname){
+      errors.surname = 'You must enter your surname'
+  }
+  if (!formValue.month){
+      errors.email = "You should enter your email"
+  }
+  if (!formValue.cardYear){
+    errors.email = "You should enter your email"
+  }
+  if (!formValue.shippingAddress){
+    errors.email = "You should enter your email"
+  }
+  if (!formValue.shippingAddress2){
+    errors.email = "You should enter your email"
+  }
+  
+  return errors;
+}
+
+const mapStateToProps =(state,ownProps)=>{
+  return{
+      plants: state.plants[ownProps.match.params.id]
+  }
+}
 const formWrapped = reduxForm ({
-  form:'payment'
+  form:'payment',
+  validate,
 })(Payment);
 
-export default connect(null,{createPayment})(formWrapped);
+export default connect(mapStateToProps,{createPayment,fetchPlant})(formWrapped);
