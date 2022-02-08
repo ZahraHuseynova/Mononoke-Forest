@@ -95,9 +95,8 @@ export const fetchSubs = ( ) => async (dispatch)=>{
     dispatch ({ type: FETCH_SUBS ,payload: data})
 }
 
-export const createPayment = (formValue) => async (dispatch,getState)=>{
-    const { userId} = getState().auth;
-    const { data } = await contact.post ('/payment',{...formValue,userId})
+export const createPayment = (formValue) => async (dispatch)=>{
+    const { data } = await contact.post ('/payment',formValue)
 
     dispatch ({type:CREATE_PAYMENT , payload:data});
 }

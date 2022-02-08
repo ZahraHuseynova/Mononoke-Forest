@@ -266,9 +266,8 @@
       "light": "Medium to low indirect light",
       "discount": "gift"
     }
-    
   ],
-  "subs":[
+  "subs": [
     {
       "id": 0,
       "name": "Unbox Happiness",
@@ -306,5 +305,18 @@
       "details": "Master the art of gift giving with a plant subscription box. We offer digital subscription gift cards that cover the cost of 3-month and 6-month subscription plans."
     }
   ],
-  "payment": []
+  "payment": [
+    {
+      "name": "Zahra",
+      "surname": "Huseynova",
+      "shippingAddress": "kspefja",
+      "shippingAddress2": "5",
+      "cardType": "amex",
+      "cardNumber": "nnnn",
+      "cardCvc": "nnn",
+      "month": "11",
+      "cardYear": "2001",
+      "id": 1
+    }
+  ]
 }

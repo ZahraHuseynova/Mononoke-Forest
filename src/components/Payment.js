@@ -64,7 +64,7 @@ class Payment extends Component{
   }
 
   onSubmit = (formValues,dispatch) => {
-    console.log(formValues);
+    
     dispatch(reset("payment")); 
     this.props.createPayment(formValues)
   }
@@ -84,12 +84,12 @@ class Payment extends Component{
                               <div className="field">
                               <Field name="name" component={this.renderShipInput} label="*Name" placeholder="Your Name"/>
                               </div>
-                              <div classNames="field">
+                              <div className="field">
                               <Field name="surname" component={this.renderShipInput} label="*Surname" placeholder="Your Surname"/>
                               </div>
                             </div>
                           </div>
-                          <div classNames="fields">
+                          <div className="fields">
                         <div className="twelve wide field">
                         <Field name="shippingAddress" component={this.renderShipInput} label="*Billing Address" placeholder="Your Address"/>
                           
@@ -154,7 +154,7 @@ class Payment extends Component{
                             </div>
                           </div>
                         </div>
-                        <div className="ui button" tabindex="0">Submit Order</div>
+                        <button className="ui button" >Submit Order</button>
                       </form>
                     </div>
                     <div className="column">
@@ -179,29 +179,31 @@ const validate = (formValue)=>{
       errors.surname = 'You must enter your surname'
   }
   if (!formValue.month){
-      errors.email = "You should enter your email"
+      errors.month = "You should enter month"
   }
   if (!formValue.cardYear){
-    errors.email = "You should enter your email"
+    errors.cardYear = "You should enter year"
   }
   if (!formValue.shippingAddress){
-    errors.email = "You should enter your email"
+    errors.shippingAddress = "You should enter your address"
   }
   if (!formValue.shippingAddress2){
-    errors.email = "You should enter your email"
+    errors.shippingAddress2 = "You should enter your address"
   }
   
   return errors;
 }
+
+
+const formWrapped = reduxForm ({
+  form:'payment',
+  validate,
+})(Payment);
 
 const mapStateToProps =(state,ownProps)=>{
   return{
       plants: state.plants[ownProps.match.params.id]
   }
 }
-const formWrapped = reduxForm ({
-  form:'payment',
-  validate,
-})(Payment);
 
 export default connect(mapStateToProps,{createPayment,fetchPlant})(formWrapped);
