@@ -26,14 +26,10 @@ const Header = () =>{
                     <Link to="/stores" className="item"> Store Locations</Link>
                     <Link to="/gift" className="item"> Gift Cards</Link>
                     <div className="right menu">
-                        <div className="ui item">
-                            <i className="search link icon"></i>
-                            Search
-                        </div>
-                        <div className="ui item">
+                        <Link to="/cart" className="ui item">
                             <i className="cart icon"></i>
                             Cart (0)
-                        </div>
+                        </Link>
                         <div className="ui item"> <GoogleAuth/></div>
                     </div>
                 </div>

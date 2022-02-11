@@ -51,10 +51,10 @@ class ShowPage extends Component{
                                     <h3>Quantity</h3>
                                 </div>
                                 <div className='column'>
-                                <button class="ui compact icon button"><i class="plus icon"></i></button>
-                                    <button class="compact ui button">
-                                        1
-                                    </button>
+                                    <button class="ui compact icon button"><i class="plus icon"></i></button>
+                                        <button class="compact ui button">
+                                            1
+                                        </button>
                                     <button class="ui compact icon button"><i class="minus icon"></i></button>
                                 </div>
                             </div>
