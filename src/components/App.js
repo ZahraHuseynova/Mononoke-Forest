@@ -41,6 +41,7 @@ const App=()=>{
                     <Route path="/cart" component={Cart} exact/>
                     <Route path="/payment/:id" component={Payment} exact/>
                     <Route path="/deletepage/:id" component={DeletePage} exact/>
+                    <Route path="/deletepage" component={DeletePage} exact/>
                     <Route path="/showpage/:id" component={ShowPage} exact/>
                     
                 </Switch>

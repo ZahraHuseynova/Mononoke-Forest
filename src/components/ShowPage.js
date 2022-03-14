@@ -1,13 +1,19 @@
 import { Component } from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
-import { fetchPlant } from '../actions';
+import { fetchPlant,addToCart } from '../actions';
 
 
 class ShowPage extends Component{
-
+    constructor(props) {
+        super(props);
+      }
     componentDidMount(){
         this.props.fetchPlant(this.props.match.params.id);
+    }
+
+    handleAddToCart = () => {
+        this.props.addToCart(this.props.match.params.id);
     }
 
     renderPlants(){
@@ -51,19 +57,26 @@ class ShowPage extends Component{
                                     <h3>Quantity</h3>
                                 </div>
                                 <div className='column'>
-                                    <button class="ui compact icon button"><i class="plus icon"></i></button>
-                                        <button class="compact ui button">
+                                    <button className="ui compact icon button"><i className="plus icon"></i></button>
+                                        <button className="compact ui button">
                                             1
                                         </button>
-                                    <button class="ui compact icon button"><i class="minus icon"></i></button>
+                                    <button className="ui compact icon button"><i className="minus icon"></i></button>
                                 </div>
                             </div>
                         </div>
-                        <Link to={`/payment/${this.props.plants.id}`}>
-                        <button className='ui fluid button' style={{backgroundColor:'#00ab84',color:'white'}}>
-                        <s style={{color:'black'}}>$45</s> {this.props.plants.price}- Add to Cart
+                        <button
+                            onClick={this.handleAddToCart}
+                            className='ui fluid button'
+                            style={{backgroundColor:'#00ab84',color:'white'}}
+                        >
+                            <s style={{color:'black'}}>$45</s> {this.props.plants.price}- Add to Cart
                         </button>
-                        </Link>
+                        {/* <Link to={`/payment/${this.props.plants.id}`}>
+                            <button className='ui fluid button' style={{backgroundColor:'#00ab84',color:'white'}}>
+                                <s style={{color:'black'}}>$45</s> {this.props.plants.price}- Add to Cart
+                            </button>
+                        </Link> */}
                         <br/>
                         <div className='ui grid'>
                             <div className='three wide column'>
@@ -193,4 +206,5 @@ const mapStateToProps =(state,ownProps)=>{
         plants: state.plants[ownProps.match.params.id]
     }
 }
-export default connect(mapStateToProps,{fetchPlant})(ShowPage);
+
+export default connect(mapStateToProps,{fetchPlant, addToCart})(ShowPage);

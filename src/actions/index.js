@@ -1,5 +1,5 @@
 import { SIGN_IN,SIGN_OUT,FETCH_CARD,FETCH_CARDS,FETCH_CONTACT,FETCH_CONTACTS,FETCH_PLANT,FETCH_PLANTS,
-    CREATE_CARD,CREATE_CONTACT,EDIT_CARD,EDIT_PLANT,EDIT_CONTACT,DELETE_CARD,DELETE_PLANT,DELETE_CONTACT,FETCH_SUBS,CREATE_PAYMENT } from "./types"
+    CREATE_CARD,CREATE_CONTACT,DELETE_CARD,DELETE_PLANT,DELETE_CONTACT,FETCH_SUBS,CREATE_PAYMENT,ADD_TO_CART,ADJUST_QTY,REMOVE_FROM_CART } from "./types"
 
 import contact from "../apis/contact"
 import history from "../history"
@@ -12,7 +12,7 @@ export const signIn =(userId)=>{
     }
 }
 
-export const signOut =()=>{
+export const signOut = ()=>{
     return {
         type:SIGN_OUT,
     }
@@ -46,7 +46,8 @@ export const deleteContact =(id)=> async (dispatch)=>{
 
 export const createCard = (formValue) => async (dispatch,getState)=>{
     const { userId} = getState().auth;
-    const { data } = await contact.post ('/giftcard',{...formValue,userId})
+    const status = 1;
+    const { data } = await contact.post ('/giftcard',{...formValue,userId,status})
 
     dispatch ({type:CREATE_CARD , payload:data});
 }
@@ -99,4 +100,28 @@ export const createPayment = (formValue) => async (dispatch)=>{
     const { data } = await contact.post ('/payment',formValue)
 
     dispatch ({type:CREATE_PAYMENT , payload:data});
+}
+
+export const addToCart = (id)=>async(dispatch, getState)=>{
+    console.log("addToCart ACTION")
+    const { data } = await contact.get(`/plants/${id}`);
+    console.log(data);
+    dispatch({
+        type: ADD_TO_CART, 
+        payload:{
+            ...data,
+            state: {...getState()}
+        }})
+}
+
+export const removeFromCart=(id)=>async(dispatch)=>{
+    const { data } = await contact.delete(`/plants/${id}`);
+
+    dispatch({ type:REMOVE_FROM_CART, payload:data})
+}
+
+export const adjustQty= (id,value)=> async(dispatch)=>{
+    const { data } = await contact.patch(`/plants/${id}`,value);
+
+    dispatch({type:ADJUST_QTY, payload:data});
 }

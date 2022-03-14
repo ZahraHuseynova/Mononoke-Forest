@@ -6,6 +6,7 @@ import { cardReducer } from './cardReducer';
 import { plantsReducer } from './plantsReducer';
 import { subsReducer } from "./subsReducer";
 import { paymentReducer } from "./paymentReducer";
+import { cartReducer } from "./cartReducer";
 
 export default combineReducers({
     auth:authReducer,
@@ -14,5 +15,6 @@ export default combineReducers({
     card:cardReducer,
     plants:plantsReducer,
     subs:subsReducer,
-    payment:paymentReducer
+    payment:paymentReducer,
+    cart:cartReducer
 });
